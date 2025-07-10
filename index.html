@@ -1,98 +1,173 @@
-
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>BJE ENGINEERING</title>
-  <link rel="stylesheet" href="style.css">
-  <style>
-    html { scroll-behavior: smooth; }
-  </style>
+  <link rel="stylesheet" href="style.css" />
+  <style>html { scroll-behavior: smooth; }</style>
+
+<!-- SEO META TAG -->
+<meta name="description" content="BJE Engineering adalah spesialis bubut, milling, slotting, dan fabrikasi industri di Cikarang.">
+<meta name="keywords" content="bubut Cikarang, milling Cikarang, jasa slotting, fabrikasi industri, BJE Engineering">
+<meta name="author" content="BJE Engineering">
+
+<!-- Open Graph / Facebook -->
+<meta property="og:title" content="BJE Engineering | Bengkel Bubut Cikarang" />
+<meta property="og:description" content="Spesialis bubut, milling, slotting dan fabrikasi industri sejak 2011." />
+<meta property="og:image" content="https://bjeengineering.github.io/images/logo.jpg" />
+<meta property="og:url" content="https://bjeengineering.github.io/" />
+<meta property="og:type" content="website" />
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="BJE Engineering">
+<meta name="twitter:description" content="Spesialis bubut, milling, slotting dan fabrikasi industri sejak 2011.">
+<meta name="twitter:image" content="https://bjeengineering.github.io/images/logo.jpg">
+
 </head>
 <body>
-
 <header>
   <h1>BJE ENGINEERING</h1>
-  <p>Spesialis Bubut, Milling, dan Machining Industri</p>
+  <p>Spesialis Bubut, Milling, Slotting, dan Fabrikasi Industri</p>
 </header>
-
-<nav>
-  <a href="#layanan">Layanan</a>
+<nav id="navbar">
+  <a href="#tentang">Tentang Kami</a>
   <a href="#galeri">Galeri</a>
+  <a href="#testimoni">Testimoni</a>
+  <a href="#form">Pemesanan</a>
   <a href="#kontak">Kontak</a>
 </nav>
-
 <div class="container">
-  <section id="layanan">
-    <h2>Layanan Kami</h2>
-    <div class="services">
-      <div class="card">
-        <h3>Bubut Konvensional</h3>
-        <p>Pengerjaan shaft, as, puli, dan komponen mesin lainnya.</p>
-      </div>
-      <div class="card">
-        <h3>Milling & Slotting</h3>
-        <p>Pembuatan keyslot, dudukan bearing, dan permukaan presisi.</p>
-      </div>
-      <div class="card">
-        <h3>Perbaikan Komponen</h3>
-        <p>Rekondisi flange, sleeve, dan spare part custom industri.</p>
-      </div>
-    </div>
+  <section id="tentang">
+    <h2>Tentang Kami</h2>
+    <p><strong>BJE Engineering</strong> adalah bengkel bubut dan machining yang berlokasi di Cikarang, melayani pembuatan dan perbaikan komponen industri sejak 2011. Kami berpengalaman dalam pengerjaan shaft, pulley, slotting gear, dan fabrikasi custom sesuai permintaan pelanggan.</p>
+    <ul>
+      <li>✅ Dikerjakan oleh tenaga berpengalaman</li>
+      <li>✅ Mesin presisi dan standar industri</li>
+      <li>✅ Pelayanan cepat dan profesional</li>
+    </ul>
   </section>
-
   <section id="galeri">
     <h2>Galeri Hasil Kerja</h2>
+    <div class="tab">
+      <button class="tablink active" onclick="filterGaleri('all')">Semua</button>
+      <button class="tablink" onclick="filterGaleri('bubut')">Bubut</button>
+      <button class="tablink" onclick="filterGaleri('milling')">Milling</button>
+      <button class="tablink" onclick="filterGaleri('slotting')">Slotting</button>
+      <button class="tablink" onclick="filterGaleri('fabrikasi')">Fabrikasi</button>
+    </div>
     <div class="gallery">
-      <div class="card"><img src="images/IMG_20230222_171625.jpg" alt="Slotting Gear"><p>Slotting Gear</p></div>
-      <div class="card"><img src="images/foto2.jpg" alt="Turning Pulley"><p>Pembuatan Pulley</p></div>
-      <div class="card"><img src="images/foto3.jpg" alt="Part Custom"><p>Komponen Custom</p></div>
-      <div class="card">
-        <img src="images/IMG_20200119_170331.jpg" alt="Slotting Key">
-        <img src="images/IMG_20230210_174722.jpg" alt="Slotting Key 2">
-        <p>Slotting Keyway</p>
+      <div class="card bubut"><img src="images/IMG_20250710_205956.jpg" alt="Bubut"><p>Bubut Shaft</p></div>
+      <div class="card milling"><img src="images/IMG_20200114_152602.jpg" alt="Milling"><p>Drilling</p></div>
+      <div class="card milling"><img src="images/IMG_20180711_112550.jpg" alt="Milling"><p>Milling Keyway</p></div>
+      <div class="card milling"><img src="images/IMG_20200110_203153.jpg" alt="Milling"><p>Slotting dan tapping keyway</p></div>
+      <div class="card slotting"><img src="images/IMG_20180709_091119.jpg" alt="Slotting"><p>Slotting Keyway</p></div>
+      <div class="card fabrikasi"><img src="images/IMG_20191009_183626.jpg" alt="Fabrikasi"><p>Rangka Besi</p></div>
+      <div class="card fabrikasi"><img src="images/IMG_20211115_095329_1.jpg" alt="Fabrikasi">
+        <img src="images/IMG_20211115_095125_1.jpg" alt="Fabrikasi">
+        <img src="images/IMG_20211115_095115.jpg" alt="Fabrikasi">
+        <p>Jig Kap Mobil</p>
       </div>
-      <div class="card"><img src="images/IMG_20191009_183626.jpg" alt="Fabrikasi"><p>Fabrikasi Besi</p></div>
     </div>
   </section>
-
-  <section id="kontak">
-    <h2>Hubungi Kami</h2>
-    <p>📍 Alamat Workshop:<br>
-    Ruko Gardenia, Jalan Irigasi Raya blok F.08, Jababeka 2,<br>
-    Jl. Cikarang Baru Raya, Kec. Cikarang Timur, Cikarang, Jawa Barat 17530</p>
-
-    <iframe
-      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.2025048415225!2d107.14714469999999!3d-6.238604799999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e699b408c62b5a1%3A0xd7cf7809d0533040!2sBJE%20Engineering!5e0!3m2!1sen!2sid!4v1720572520000!5m2!1sen!2sid"
-      width="100%" height="300"
-      style="border:0; border-radius: 10px; margin-top: 20px;"
-      allowfullscreen="" loading="lazy"
-      referrerpolicy="no-referrer-when-downgrade"
-    ></iframe>
-
-    <p>📞 Telepon/WhatsApp:</p>
-<ul>
-  <li><a class="btn" href="https://wa.me/628122919736" target="_blank">0812-2919-736</a></li>
-  <li><a class="btn" href="https://wa.me/6281234567890" target="_blank">0898-2524-835</a></li>
-</ul>
-
-    <form action="#" method="post">
-      <input type="text" name="nama" placeholder="Nama Anda" required>
-      <input type="email" name="email" placeholder="Email atau WhatsApp" required>
-      <textarea name="pesan" rows="4" placeholder="Tulis kebutuhan machining Anda..."></textarea>
-      <button type="submit">Kirim Pesan</button>
+  <section id="testimoni">
+    <h2>Testimoni Pelanggan</h2>
+    <p>Belum ada testimoni yang ditampilkan. Silakan isi setelah menggunakan layanan kami.</p>
+  </section>
+  <section id="form">
+    <h2>Formulir Pemesanan / Penawaran</h2>
+    <form id="pesanForm" action="https://formspree.io/f/xblyndjo" method="POST" enctype="multipart/form-data">
+      <div class="row">
+        <input type="text" name="nama" placeholder="Nama Anda" required />
+        <input type="tel" name="telepon" placeholder="Nomor WhatsApp" required />
+      </div>
+      <select name="layanan" required>
+        <option value="">Pilih Layanan</option>
+        <option value="bubut">Bubut</option>
+        <option value="milling">Milling</option>
+        <option value="Milling & bubut">Milling & bubut</option>
+	<option value="slotting">Slotting</option>
+        <option value="fabrikasi">Fabrikasi</option>
+      </select>
+      <textarea name="deskripsi" rows="4" placeholder="Deskripsikan kebutuhan Anda..."></textarea>
+      <input type="file" name="lampiran" accept=".pdf,.jpg,.jpeg,.png,.dwg,.dxf,.sldprt,.sldasm,.stl,.step,.iges,.ipt,.iam,.f3d,.CATPart,.CATProduct,.skp,.obj,.zip,.rar,.nc,.cam,.mcam,.3dm,.x_t,.x_b,video/mp4" onchange="previewFile(event)" />
+      <small>*Upload file desain teknik ≤ 10MB. Untuk file besar, gunakan Google Drive dan kirim link di deskripsi.</small>
+      <div id="file-preview"></div>
+      <input type="hidden" name="_subject" value="Permintaan Baru dari Website BJE Engineering" />
+      <button type="submit">Kirim ke Email</button>
+      <button type="button" onclick="kirimWhatsApp()">Kirim via WhatsApp</button>
     </form>
   </section>
+  <section id="kontak">
+    <h2>Hubungi Kami</h2>
+    <p>📍 Ruko Gardenia Blok F.08, Jababeka 2, Cikarang Timur, Bekasi, Jawa Barat 17530</p>
+    <p>📞 <a href="https://wa.me/628122919736" target="_blank">0812-2919-736</a> / <a href="https://wa.me/628982524835" target="_blank">0898-2524-835</a></p>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.2025048415225!2d107.14714469999999!3d-6.238604799999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e699b408c62b5a1%3A0xd7cf7809d0533040!2sBJE%20Engineering!5e0!3m2!1sen!2sid!4v1720572520000!5m2!1sen!2sid" width="100%" height="300" 	style="border:0; border-radius: 10px;" allowfullscreen="" loading="lazy"></iframe>
+	<p><a href="https://g.co/kgs/oP4CyU8" target="_blank" style="color:#0f4c75;font-weight:bold;text-decoration:underline">📍 Lihat di Google Maps</a></p>  
+</section>
 </div>
-
+<a href="https://wa.me/628982524835" class="floating-wa" target="_blank">WhatsApp</a>
 <footer>
-  <p>&copy; 2025 BJE ENGINEERING | Telepon: 0812-2919-736 /0898-2524-835</p>
-  
+  <p>&copy; 2025 BJE ENGINEERING | Telepon: 0812-2919-736 / 0898-2524-835</p>
 </footer>
-<a href="https://wa.me/628122919736" class="floating-wa" target="_blank">
-  WhatsApp
-</a>
+<script>
+function filterGaleri(kategori) {
+  const cards = document.querySelectorAll('.gallery .card');
+  const tabs = document.querySelectorAll('.tablink');
+  tabs.forEach(t => t.classList.remove('active'));
+  event.target.classList.add('active');
+  cards.forEach(card => {
+    card.style.display = kategori === 'all' || card.classList.contains(kategori) ? 'block' : 'none';
+  });
+}
+function kirimWhatsApp() {
+  const nama = document.querySelector('[name="nama"]').value;
+  const telepon = document.querySelector('[name="telepon"]').value;
+  const layanan = document.querySelector('[name="layanan"]').value;
+  const deskripsi = document.querySelector('[name="deskripsi"]').value;
+  const text = `Halo, saya ${nama}, ingin pesan layanan *${layanan}*.
+No WA: ${telepon}
+Keterangan: ${deskripsi}`;
+  const url = `https://wa.me/628122919736?text=${encodeURIComponent(text)}`;
+  window.open(url, '_blank');
+}
+function previewFile(event) {
+  const file = event.target.files[0];
+  const preview = document.getElementById('file-preview');
+  if (file && file.type.startsWith('image/')) {
+    const reader = new FileReader();
+    reader.onload = function(e) {
+      preview.innerHTML = `<img src="${e.target.result}" style="max-width:200px;margin-top:10px;border-radius:8px;" />`;
+    }
+    reader.readAsDataURL(file);
+  } else {
+    preview.innerHTML = '';
+  }
+}
+document.getElementById('pesanForm').addEventListener('submit', function(e) {
+  const file = document.querySelector('[name="lampiran"]').files[0];
+  if (file && file.size > 10 * 1024 * 1024) {
+    e.preventDefault();
+    alert("Ukuran file terlalu besar! Maksimal 10MB.");
+  }
+});
+</script>
+
+<!-- WhatsApp Chat Widget -->
+<script>
+  (function () {
+    var options = {
+      whatsapp: "628122919736",
+      call_to_action: "Live Chat via WhatsApp",
+      position: "right",
+    };
+    var proto = document.location.protocol, host = "getbutton.io", url = proto + "//static." + host;
+    var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = url + '/widget-send-button/js/init.js';
+    s.onload = function () { WhWidgetSendButton.init(host, proto, options); };
+    var x = document.getElementsByTagName('script')[0]; x.parentNode.insertBefore(s, x);
+  })();
+</script>
 
 </body>
 </html>

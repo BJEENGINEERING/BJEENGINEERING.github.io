@@ -1,20 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
-
 body {
   font-family: 'Poppins', sans-serif;
-  margin: 0; padding: 0;
+  margin: 0;
+  padding: 0;
   background: #f0f4f8;
   color: #333;
 }
-
 header {
   background: linear-gradient(to right, #0f4c75, #3282b8);
   color: white;
   padding: 40px 20px;
   text-align: center;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
-
 nav {
   background: #1b262c;
   display: flex;
@@ -32,36 +30,32 @@ nav a {
 nav a:hover {
   background: #0f4c75;
 }
-
 .container {
   padding: 40px 20px;
   max-width: 1200px;
   margin: auto;
 }
-
 h2 {
   text-align: center;
   margin-bottom: 30px;
   color: #0f4c75;
 }
-
-.services, .gallery {
+.gallery {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 20px;
 }
-
 .card {
   background: white;
   border: 1px solid #ddd;
   border-radius: 12px;
   padding: 20px;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 .card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
 }
 .card img {
   width: 100%;
@@ -69,8 +63,20 @@ h2 {
   border-radius: 8px;
   margin-bottom: 10px;
 }
-
-form input, form textarea {
+form {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+form .row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+form input,
+form textarea,
+form select {
   width: 100%;
   padding: 12px;
   margin-bottom: 15px;
@@ -78,7 +84,6 @@ form input, form textarea {
   border: 1px solid #ccc;
   font-family: 'Poppins', sans-serif;
 }
-
 form button {
   padding: 12px 20px;
   background: #3282b8;
@@ -92,7 +97,6 @@ form button {
 form button:hover {
   background: #0f4c75;
 }
-
 footer {
   background: #1b262c;
   color: white;
@@ -101,8 +105,31 @@ footer {
   margin-top: 40px;
   font-size: 0.9em;
 }
-
-/* Tombol WhatsApp mengambang */
+.tab {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.tablink {
+  padding: 10px 18px;
+  border: none;
+  background: #e0e0e0;
+  cursor: pointer;
+  margin: 0 4px;
+  border-radius: 4px;
+}
+.tablink.active,
+.tablink:hover {
+  background: #3282b8;
+  color: white;
+}
+.testimonials blockquote {
+  background: #f1f5f9;
+  padding: 15px;
+  margin: 10px 0;
+  border-left: 5px solid #3282b8;
+  border-radius: 6px;
+  font-style: italic;
+}
 .floating-wa {
   position: fixed;
   bottom: 20px;
@@ -111,8 +138,13 @@ footer {
   color: white;
   padding: 12px 16px;
   border-radius: 50px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   text-decoration: none;
   font-weight: bold;
   z-index: 999;
+}
+#file-preview img {
+  max-width: 200px;
+  margin-top: 10px;
+  border-radius: 8px;
 }
