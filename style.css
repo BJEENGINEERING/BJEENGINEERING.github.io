@@ -84,6 +84,10 @@ form {
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  width: 100%;
+  max-width: 600px;
+  margin: auto;
+  box-sizing: border-box;
 }
 
 form .row {
@@ -92,15 +96,22 @@ form .row {
   gap: 10px;
 }
 
+form .row input {
+  flex: 1;
+  min-width: 48%;
+}
+
 form input,
 form textarea,
 form select {
   width: 100%;
+  max-width: 100%;
   padding: 12px;
   margin-bottom: 15px;
   border-radius: 6px;
   border: 1px solid #ccc;
   font-family: 'Poppins', sans-serif;
+  box-sizing: border-box;
 }
 
 form button {
@@ -112,11 +123,14 @@ form button {
   font-weight: bold;
   cursor: pointer;
   transition: background 0.3s ease;
+  margin-right: 10px;
 }
 
 form button:hover {
   background: #0f4c75;
 }
+
+
 
 /* Tab Galeri */
 .tab {
