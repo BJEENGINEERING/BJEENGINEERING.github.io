@@ -108,30 +108,31 @@ s0.parentNode.insertBefore(s1,s0);
   </section>
 
   <!-- ✅ Formulir -->
-  <section id="form">
-    <h2>Formulir Pemesanan / Penawaran</h2>
-    <form id="pesanForm" action="https://submit-form.com/zxSeKWaw1" method="POST" enctype="multipart/form-data">
-      <div class="row">
-        <input type="text" name="nama" placeholder="Nama Anda" required />
-        <input type="tel" name="telepon" placeholder="Nomor WhatsApp" required />
-      </div>
-      <select name="layanan" required>
-        <option value="">Pilih Layanan</option>
-        <option value="bubut">Bubut</option>
-        <option value="milling">Milling</option>
-        <option value="Milling & bubut">Milling & bubut</option>
-        <option value="slotting">Slotting</option>
-        <option value="fabrikasi">Fabrikasi</option>
-      </select>
-      <textarea name="deskripsi" rows="4" placeholder="Deskripsikan kebutuhan Anda..."></textarea>
-      <input type="file" name="lampiran" accept=".pdf,.jpg,.jpeg,.png,.zip,.rar,.step,.stl,.dwg,.dxf" onchange="previewFile(event)" />
-      <small>*Upload ≤10MB. File besar kirim via Google Drive di deskripsi.</small>
-      <div id="file-preview"></div>
-      <input type="hidden" name="_subject" value="Permintaan Baru dari Website BJE Engineering" />
-      <button type="submit">Kirim ke Email</button>
-      <button type="button" onclick="kirimWhatsApp()">Kirim via WhatsApp</button>
-    </form>
-  </section>
+<section id="form">
+  <h2>Formulir Pemesanan / Penawaran</h2>
+  <form id="pesanForm" enctype="multipart/form-data">
+    <div class="row">
+      <input type="text" name="nama" placeholder="Nama Anda" required />
+      <input type="tel" name="telepon" placeholder="Nomor WhatsApp" required />
+    </div>
+    <select name="layanan" required>
+      <option value="">Pilih Layanan</option>
+      <option value="bubut">Bubut</option>
+      <option value="milling">Milling</option>
+      <option value="Milling & bubut">Milling & bubut</option>
+      <option value="slotting">Slotting</option>
+      <option value="fabrikasi">Fabrikasi</option>
+    </select>
+    <textarea name="deskripsi" rows="4" placeholder="Deskripsikan kebutuhan Anda..."></textarea>
+    <input type="file" name="lampiran" accept=".pdf,.jpg,.jpeg,.png,.zip,.rar,.step,.stl,.dwg,.dxf" onchange="previewFile(event)" />
+    <small>*Upload ≤10MB. File besar kirim via Google Drive di deskripsi.</small>
+    <div id="file-preview"></div>
+    <input type="hidden" name="to_email" value="janubenedictus@gmail.com" />
+    <button type="submit">Kirim ke Email</button>
+    <button type="button" onclick="kirimWhatsApp()">Kirim via WhatsApp</button>
+  </form>
+</section>
+
 
   <!-- ✅ Kontak -->
   <section id="kontak">
@@ -223,6 +224,48 @@ window.addEventListener('scroll', () => {
   s.onload = function () { WhWidgetSendButton.init(host, proto, options); };
   var x = document.getElementsByTagName('script')[0]; x.parentNode.insertBefore(s, x);
 })();
+</script>
+<!-- ✅ Script EmailJS -->
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+<script>
+  emailjs.init("Dj0Uv9q4EJ3A05qFw");
+
+  document.getElementById("pesanForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    const form = this;
+    const file = form.lampiran.files[0];
+
+    if (file && file.size > 10 * 1024 * 1024) {
+      alert("Ukuran file terlalu besar! Maksimal 10MB.");
+      return;
+    }
+
+    emailjs.sendForm("service_458y15d", "template_v6f6a9c", form)
+      .then(() => {
+        alert("Pesan berhasil dikirim!");
+        form.reset();
+        document.getElementById("file-preview").innerHTML = "";
+      }, (err) => {
+        console.error("Gagal:", err);
+        alert("Gagal mengirim. Silakan coba lagi.");
+      });
+  });
+
+  function previewFile(event) {
+    const file = event.target.files[0];
+    const preview = document.getElementById('file-preview');
+    if (!file) return;
+    if (file.type.startsWith('image/')) {
+      const reader = new FileReader();
+      reader.onload = function(e) {
+        preview.innerHTML = `<img src="${e.target.result}" style="max-width:200px;margin-top:10px;border-radius:8px;" />`;
+      };
+      reader.readAsDataURL(file);
+    } else {
+      preview.innerHTML = `<p>File diunggah: ${file.name}</p>`;
+    }
+  }
 </script>
 
 </body>
