@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
 body {
   font-family: 'Poppins', sans-serif;
   margin: 0;
@@ -6,6 +7,7 @@ body {
   background: #f0f4f8;
   color: #333;
 }
+
 header {
   background: linear-gradient(to right, #0f4c75, #3282b8);
   color: white;
@@ -13,6 +15,7 @@ header {
   text-align: center;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
+
 nav {
   background: #1b262c;
   display: flex;
@@ -20,31 +23,40 @@ nav {
   position: sticky;
   top: 0;
   z-index: 1000;
+  flex-wrap: wrap;
 }
+
 nav a {
   color: white;
   padding: 16px 24px;
   text-decoration: none;
   transition: background 0.3s ease;
 }
-nav a:hover {
+
+nav a:hover,
+nav a.active {
   background: #0f4c75;
 }
+
 .container {
   padding: 40px 20px;
   max-width: 1200px;
   margin: auto;
 }
+
 h2 {
   text-align: center;
   margin-bottom: 30px;
   color: #0f4c75;
 }
+
+/* Galeri */
 .gallery {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 20px;
 }
+
 .card {
   background: white;
   border: 1px solid #ddd;
@@ -53,27 +65,33 @@ h2 {
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
 .card:hover {
   transform: translateY(-5px);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
 }
+
 .card img {
   width: 100%;
   height: auto;
   border-radius: 8px;
   margin-bottom: 10px;
 }
+
+/* Form */
 form {
   background: white;
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
+
 form .row {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
 }
+
 form input,
 form textarea,
 form select {
@@ -84,6 +102,7 @@ form select {
   border: 1px solid #ccc;
   font-family: 'Poppins', sans-serif;
 }
+
 form button {
   padding: 12px 20px;
   background: #3282b8;
@@ -94,21 +113,17 @@ form button {
   cursor: pointer;
   transition: background 0.3s ease;
 }
+
 form button:hover {
   background: #0f4c75;
 }
-footer {
-  background: #1b262c;
-  color: white;
-  text-align: center;
-  padding: 20px;
-  margin-top: 40px;
-  font-size: 0.9em;
-}
+
+/* Tab Galeri */
 .tab {
   text-align: center;
   margin-bottom: 20px;
 }
+
 .tablink {
   padding: 10px 18px;
   border: none;
@@ -117,11 +132,14 @@ footer {
   margin: 0 4px;
   border-radius: 4px;
 }
+
 .tablink.active,
 .tablink:hover {
   background: #3282b8;
   color: white;
 }
+
+/* Testimoni */
 .testimonials blockquote {
   background: #f1f5f9;
   padding: 15px;
@@ -130,6 +148,8 @@ footer {
   border-radius: 6px;
   font-style: italic;
 }
+
+/* Tombol WA */
 .floating-wa {
   position: fixed;
   bottom: 24px;
@@ -148,8 +168,25 @@ footer {
   gap: 8px;
 }
 
+/* File preview */
 #file-preview img {
   max-width: 200px;
   margin-top: 10px;
   border-radius: 8px;
+}
+
+#file-preview p {
+  margin-top: 10px;
+  font-size: 0.9em;
+  color: #555;
+}
+
+/* Footer */
+footer {
+  background: #1b262c;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  margin-top: 40px;
+  font-size: 0.9em;
 }
