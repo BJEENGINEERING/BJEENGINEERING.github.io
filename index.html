@@ -13,7 +13,7 @@
   <meta name="keywords" content="bubut Cikarang, milling Cikarang, jasa slotting, fabrikasi industri, BJE Engineering">
   <meta name="author" content="BJE Engineering">
 
-  <!-- Open Graph / Facebook -->
+  <!-- Open Graph -->
   <meta property="og:title" content="BJE Engineering | Bengkel Bubut Cikarang" />
   <meta property="og:description" content="Spesialis bubut, milling, slotting dan fabrikasi industri sejak 2011." />
   <meta property="og:image" content="https://bjeengineering.github.io/images/logo.jpg" />
@@ -30,9 +30,20 @@
 </head>
 <body>
 
-<!-- Tawk.to Live Chat -->
-<script type="text/javascript">/* ... tetap seperti sebelumnya ... */</script>
+<!-- ✅ Live Chat Tawk.to -->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/686fef2b784e0c1911e02538/1ivqjshbm';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
 
+<!-- ✅ Header dan Navigasi -->
 <header>
   <h1>BJE ENGINEERING</h1>
   <p>Spesialis Bubut, Milling, Slotting, dan Fabrikasi Industri</p>
@@ -47,9 +58,10 @@
 </nav>
 
 <div class="container">
+  <!-- ✅ Tentang -->
   <section id="tentang">
     <h2>Tentang Kami</h2>
-    <p><strong>BJE Engineering</strong> adalah bengkel bubut dan machining berlokasi di Cikarang, melayani pembuatan dan perbaikan komponen industri sejak 2011. Kami berpengalaman dalam pengerjaan shaft, pulley, slotting gear, dan fabrikasi custom sesuai permintaan pelanggan.</p>
+    <p><strong>BJE Engineering</strong> adalah bengkel bubut dan machining berlokasi di Cikarang, melayani pembuatan dan perbaikan komponen industri sejak 2011.</p>
     <ul>
       <li>✅ Dikerjakan oleh tenaga berpengalaman</li>
       <li>✅ Mesin presisi dan standar industri</li>
@@ -57,6 +69,7 @@
     </ul>
   </section>
 
+  <!-- ✅ Galeri -->
   <section id="galeri">
     <h2>Galeri Hasil Kerja</h2>
     <div class="tab">
@@ -70,23 +83,25 @@
       <div class="card bubut"><img loading="lazy" src="images/IMG_20250710_205956.jpg" alt="Bubut Shaft"><p>Bubut Shaft</p></div>
       <div class="card milling"><img loading="lazy" src="images/IMG_20200114_152602.jpg" alt="Drilling"><p>Drilling</p></div>
       <div class="card milling"><img loading="lazy" src="images/IMG_20180711_112550.jpg" alt="Milling Keyway"><p>Milling Keyway</p></div>
-      <div class="card milling"><img loading="lazy" src="images/IMG_20200110_203153.jpg" alt="Slotting dan tapping keyway"><p>Slotting & Tapping Keyway</p></div>
+      <div class="card milling"><img loading="lazy" src="images/IMG_20200110_203153.jpg" alt="Slotting & tapping"><p>Slotting & Tapping</p></div>
       <div class="card slotting"><img loading="lazy" src="images/IMG_20180709_091119.jpg" alt="Slotting Keyway"><p>Slotting Keyway</p></div>
       <div class="card fabrikasi"><img loading="lazy" src="images/IMG_20191009_183626.jpg" alt="Rangka Besi"><p>Rangka Besi</p></div>
       <div class="card fabrikasi">
-        <img loading="lazy" src="images/IMG_20211115_095329_1.jpg" alt="Jig Kap Mobil 1">
-        <img loading="lazy" src="images/IMG_20211115_095125_1.jpg" alt="Jig Kap Mobil 2">
-        <img loading="lazy" src="images/IMG_20211115_095115.jpg" alt="Jig Kap Mobil 3">
+        <img loading="lazy" src="images/IMG_20211115_095329_1.jpg" alt="Jig 1">
+        <img loading="lazy" src="images/IMG_20211115_095125_1.jpg" alt="Jig 2">
+        <img loading="lazy" src="images/IMG_20211115_095115.jpg" alt="Jig 3">
         <p>Jig Kap Mobil</p>
       </div>
     </div>
   </section>
 
+  <!-- ✅ Testimoni -->
   <section id="testimoni">
     <h2>Testimoni Pelanggan</h2>
     <p>Belum ada testimoni yang ditampilkan. Silakan isi setelah menggunakan layanan kami.</p>
   </section>
 
+  <!-- ✅ Formulir -->
   <section id="form">
     <h2>Formulir Pemesanan / Penawaran</h2>
     <form id="pesanForm" action="https://submit-form.com/zxSeKWaw1" method="POST" enctype="multipart/form-data">
@@ -103,8 +118,8 @@
         <option value="fabrikasi">Fabrikasi</option>
       </select>
       <textarea name="deskripsi" rows="4" placeholder="Deskripsikan kebutuhan Anda..."></textarea>
-      <input type="file" name="lampiran" accept=".pdf,.jpg,.jpeg,.png,...mp4" onchange="previewFile(event)" />
-      <small>*Upload file desain teknik ≤ 10MB. File besar kirim via Google Drive.</small>
+      <input type="file" name="lampiran" accept=".pdf,.jpg,.jpeg,.png,.zip,.rar,.step,.stl,.dwg,.dxf" onchange="previewFile(event)" />
+      <small>*Upload ≤10MB. File besar kirim via Google Drive di deskripsi.</small>
       <div id="file-preview"></div>
       <input type="hidden" name="_subject" value="Permintaan Baru dari Website BJE Engineering" />
       <button type="submit">Kirim ke Email</button>
@@ -112,22 +127,25 @@
     </form>
   </section>
 
+  <!-- ✅ Kontak -->
   <section id="kontak">
     <h2>Hubungi Kami</h2>
-    <p>📍 Ruko Gardenia Blok F.08, Jababeka 2, Cikarang Timur</p>
+    <p>📍 Ruko Gardenia Blok F.08, Jababeka 2, Cikarang Timur, Bekasi</p>
     <p>📞 <a href="https://wa.me/628122919736" target="_blank">0812-2919-736</a> / <a href="https://wa.me/628982425835" target="_blank">0898-2425-835</a></p>
-    <iframe src="https://www.google.com/maps/embed?..."></iframe>
-    <p><a href="https://g.co/kgs/oP4CyU8" target="_blank">📍 Lihat di Google Maps</a></p>  
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18..." width="100%" height="300" style="border:0;border-radius:10px;" allowfullscreen="" loading="lazy"></iframe>
+    <p><a href="https://g.co/kgs/oP4CyU8" target="_blank" style="color:#0f4c75;font-weight:bold;">📍 Lihat di Google Maps</a></p>
   </section>
 </div>
 
+<!-- ✅ Tombol WA hijau -->
 <a href="https://wa.me/628982425835" class="floating-wa" target="_blank">WhatsApp</a>
 
+<!-- ✅ Footer -->
 <footer>
   <p>&copy; 2025 BJE ENGINEERING | Telepon: 0812-2919-736 / 0898-2425-835</p>
 </footer>
 
-<!-- Script -->
+<!-- ✅ JavaScript -->
 <script>
 function filterGaleri(kategori) {
   const cards = document.querySelectorAll('.gallery .card');
@@ -186,8 +204,20 @@ window.addEventListener('scroll', () => {
 });
 </script>
 
-<!-- WhatsApp Widget Tetap -->
-<script>/* tetap seperti sebelumnya */</script>
+<!-- ✅ WhatsApp Widget GetButton.io -->
+<script>
+(function () {
+  var options = {
+    whatsapp: "628122919736",
+    call_to_action: "Live Chat via WhatsApp",
+    position: "left",
+  };
+  var proto = document.location.protocol, host = "getbutton.io", url = proto + "//static." + host;
+  var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = url + '/widget-send-button/js/init.js';
+  s.onload = function () { WhWidgetSendButton.init(host, proto, options); };
+  var x = document.getElementsByTagName('script')[0]; x.parentNode.insertBefore(s, x);
+})();
+</script>
 
 </body>
 </html>
