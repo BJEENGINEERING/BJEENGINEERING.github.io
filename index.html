@@ -233,7 +233,7 @@ window.addEventListener('scroll', () => {
 <!-- ✅ Script EmailJS -->
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 <script>
-  emailjs.init("Dj0Uv9q4EJ3A05qFw");
+ emailjs.init("1h0Eon4xJJdmjnXpu");
 
   document.getElementById("pesanForm").addEventListener("submit", function(e) {
     e.preventDefault();
@@ -246,7 +246,7 @@ window.addEventListener('scroll', () => {
       return;
     }
 
-    emailjs.sendForm("service_458y15d", "template_v6f6a9c", form)
+    emailjs.sendForm("service_458y15d", "template_ukcnbqz", form)
       .then(() => {
         alert("Pesan berhasil dikirim!");
         form.reset();
