@@ -115,38 +115,46 @@ s0.parentNode.insertBefore(s1,s0);
     <p>Belum ada testimoni yang ditampilkan. Silakan isi setelah menggunakan layanan kami.</p>
   </section>
 
-  <!-- ✅ Formulir -->
+ <!-- ✅ Formulir Pemesanan -->
 <section id="form">
   <h2>Formulir Pemesanan / Penawaran</h2>
   <form id="pesanForm" onsubmit="submitToSheets(event)">
-  <div class="row">
-    <input type="text" name="nama" placeholder="Nama Anda" required />
-    <input type="tel" name="telepon" placeholder="Nomor WhatsApp" required />
-  </div>
-
-  <select name="layanan" required>
-    <option value="">Pilih Layanan</option>
-    <option value="bubut">Bubut</option>
-    <option value="milling">Milling</option>
-   <option value="Milling & bubut">Milling & bubut</option>
-    <option value="slotting">Slotting</option>
-    <option value="fabrikasi">Fabrikasi</option>
-  </select>
-
-  <textarea name="deskripsi" rows="4" placeholder="Deskripsikan kebutuhan Anda..."></textarea>
-
-  <input type="file" name="lampiran" accept=".pdf,.jpg,.jpeg,.png,.dwg,.dxf,.sldprt,.sldasm,.stl,.step,.iges,.ipt,.iam,.f3d,.CATPart,.CATProduct,.skp,.obj,.zip,.rar,.nc,.cam,.mcam,.3dm,.x_t,.x_b,video/mp4" onchange="previewFile(event)" />
-
-  <small>*Upload ≤10MB. File besar kirim via Google Drive di deskripsi.</small>
-
-  <div id="file-preview"></div>
-
-  <button type="submit">Kirim ke Email</button>
-  <button type="button" onclick="kirimWhatsApp()">Kirim via WhatsApp</button>
-</form>
+    <div class="row">
+      <input type="text" name="nama" placeholder="Nama Anda" required />
+      <input type="tel" name="telepon" placeholder="Nomor WhatsApp" required />
+    </div>
+    <select name="layanan" required>
+      <option value="">Pilih Layanan</option>
+      <option value="bubut">Bubut</option>
+      <option value="milling">Milling</option>
+      <option value="slotting">Slotting</option>
+      <option value="fabrikasi">Fabrikasi</option>
+    </select>
+    <textarea name="deskripsi" rows="4" placeholder="Deskripsikan kebutuhan Anda dan tempelkan link Google Drive jika ada file..."></textarea>
+    <input type="file" name="lampiran" accept=".pdf,.jpg,.jpeg,.png,.dwg,.dxf,.sldprt,.sldasm,.stl,.step,.iges,.ipt,.iam,.f3d,.CATPart,.CATProduct,.skp,.obj,.zip,.rar,.nc,.cam,.mcam,.3dm,.x_t,.x_b,video/mp4" onchange="previewFile(event)" />
+    <small>*Upload ≤10MB. File besar kirim via Google Drive di deskripsi.</small>
+    <div id="file-preview"></div>
+    <button type="submit">Kirim ke Google Sheets</button>
+    <button type="button" onclick="kirimWhatsApp()">Kirim via WhatsApp</button>
+  </form>
 </section>
-
-
+<!-- ✅ Script Preview dan Validasi File -->
+<script>
+function previewFile(event) {
+  const file = event.target.files[0];
+  const preview = document.getElementById('file-preview');
+  if (!file) return;
+  if (file.type.startsWith('image/')) {
+    const reader = new FileReader();
+    reader.onload = function(e) {
+      preview.innerHTML = `<img src="${e.target.result}" style="max-width:200px;margin-top:10px;border-radius:8px;" />`;
+    };
+    reader.readAsDataURL(file);
+  } else {
+    preview.innerHTML = `<p>File diunggah: ${file.name}</p>`;
+  }
+}
+</script>
   <!-- ✅ Kontak -->
   <section id="kontak">
     <h2>Hubungi Kami</h2>
@@ -347,10 +355,10 @@ window.addEventListener('scroll', () => {
       preview.innerHTML = `<p>File diunggah: ${file.name}</p>`;
     }
   }
+<!-- ✅ Script Kirim ke Google Sheets -->
 <script>
 function submitToSheets(event) {
   event.preventDefault();
-
   const form = document.getElementById("pesanForm");
   const data = {
     nama: form.nama.value,
@@ -359,6 +367,12 @@ function submitToSheets(event) {
     deskripsi: form.deskripsi.value,
     link_drive: form.deskripsi.value
   };
+
+  const file = form.lampiran.files[0];
+  if (file && file.size > 10 * 1024 * 1024) {
+    alert("Ukuran file terlalu besar! Maksimal 10MB.");
+    return;
+  }
 
   fetch("https://script.google.com/macros/s/AKfycbyUtNpPINsiF-Wt5VORQav-l8hN6g8q1RDFOkx1J4kky3-bOGYQvADuNP_96P9aE-gc/exec", {
     method: "POST",
@@ -377,6 +391,17 @@ function submitToSheets(event) {
     console.error(err);
     alert("❌ Gagal mengirim. Coba lagi.");
   });
+}
+</script>
+<!-- ✅ Script Kirim ke WhatsApp -->
+<script>
+function kirimWhatsApp() {
+  const nama = document.querySelector('[name="nama"]').value;
+  const telepon = document.querySelector('[name="telepon"]').value;
+  const layanan = document.querySelector('[name="layanan"]').value;
+  const deskripsi = document.querySelector('[name="deskripsi"]').value;
+  const text = `Halo, saya ${nama}, ingin pesan layanan *${layanan}*.%0ANo WA: ${telepon}%0AKeterangan: ${deskripsi}`;
+  window.open(`https://wa.me/628982425835?text=${text}`, '_blank');
 }
 </script>
 
