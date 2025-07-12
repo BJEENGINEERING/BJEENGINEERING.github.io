@@ -320,39 +320,48 @@ window.addEventListener('scroll', () => {
 function submitToSheets(event) {
   event.preventDefault();
   const form = document.getElementById("pesanForm");
-  const data = {
-    nama: form.nama.value,
-    telepon: form.telepon.value,
-    layanan: form.layanan.value,
-    deskripsi: form.deskripsi.value,
-    link_drive: form.deskripsi.value
-  };
+  const fileInput = form.lampiran;
+  const file = fileInput.files[0];
 
-  const file = form.lampiran.files[0];
+  // Validasi ukuran file (maks 10MB)
   if (file && file.size > 10 * 1024 * 1024) {
     alert("Ukuran file terlalu besar! Maksimal 10MB.");
     return;
   }
 
+  // Siapkan data JSON
+  const data = {
+    nama: form.nama.value,
+    telepon: form.telepon.value,
+    layanan: form.layanan.value,
+    deskripsi: form.deskripsi.value,
+    filename: file ? file.name : ""
+  };
+
   fetch("https://script.google.com/macros/s/AKfycbyUtNpPINsiF-Wt5VORQav-l8hN6g8q1RDFOkx1J4kky3-bOGYQvADuNP_96P9aE-gc/exec", {
     method: "POST",
-    body: JSON.stringify(data),
     headers: {
       "Content-Type": "application/json"
-    }
+    },
+    body: JSON.stringify(data)
   })
   .then(res => res.text())
-  .then(() => {
-    alert("✅ Data berhasil dikirim ke Google Sheets!");
-    form.reset();
-    document.getElementById("file-preview").innerHTML = "";
+  .then((resText) => {
+    if (resText.includes("Sukses")) {
+      alert("✅ Data berhasil dikirim ke Google Sheets!");
+      form.reset();
+      document.getElementById("file-preview").innerHTML = "";
+    } else {
+      throw new Error(resText);
+    }
   })
   .catch(err => {
-    console.error(err);
+    console.error("Gagal kirim:", err);
     alert("❌ Gagal mengirim. Coba lagi.");
   });
 }
 </script>
+
 <!-- ✅ Script Kirim ke WhatsApp -->
 <script>
 function kirimWhatsApp() {
