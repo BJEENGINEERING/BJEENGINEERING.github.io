@@ -320,16 +320,13 @@ window.addEventListener('scroll', () => {
 function submitToSheets(event) {
   event.preventDefault();
   const form = document.getElementById("pesanForm");
-  const fileInput = form.lampiran;
-  const file = fileInput.files[0];
+  const file = form.lampiran.files[0];
 
-  // Validasi ukuran file (maks 10MB)
   if (file && file.size > 10 * 1024 * 1024) {
     alert("Ukuran file terlalu besar! Maksimal 10MB.");
     return;
   }
 
-  // Siapkan data JSON
   const data = {
     nama: form.nama.value,
     telepon: form.telepon.value,
@@ -346,18 +343,19 @@ function submitToSheets(event) {
     body: JSON.stringify(data)
   })
   .then(res => res.text())
-  .then((resText) => {
+  .then(resText => {
     if (resText.includes("Sukses")) {
       alert("✅ Data berhasil dikirim ke Google Sheets!");
       form.reset();
       document.getElementById("file-preview").innerHTML = "";
     } else {
-      throw new Error(resText);
+      console.error("Respon aneh:", resText);
+      alert("❌ Gagal mengirim. Coba lagi.");
     }
   })
   .catch(err => {
     console.error("Gagal kirim:", err);
-    alert("❌ Gagal mengirim. Coba lagi.");
+    alert("❌ Terjadi kesalahan koneksi.");
   });
 }
 </script>
