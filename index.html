@@ -327,20 +327,17 @@ function submitToSheets(event) {
     return;
   }
 
-  const data = {
-    nama: form.nama.value,
-    telepon: form.telepon.value,
-    layanan: form.layanan.value,
-    deskripsi: form.deskripsi.value,
-    filename: file ? file.name : ""
-  };
+  const formData = new FormData();
+  formData.append("nama", form.nama.value);
+  formData.append("telepon", form.telepon.value);
+  formData.append("layanan", form.layanan.value);
+  formData.append("deskripsi", form.deskripsi.value);
+  formData.append("filename", file ? file.name : "");
 
   fetch("https://script.google.com/macros/s/AKfycbyUtNpPINsiF-Wt5VORQav-l8hN6g8q1RDFOkx1J4kky3-bOGYQvADuNP_96P9aE-gc/exec", {
     method: "POST",
-    headers: {
-      "Content-Type": "application/json"
-    },
-    body: JSON.stringify(data)
+    body: formData
+    // ❗ Jangan set header Content-Type manual!
   })
   .then(res => res.text())
   .then(resText => {
@@ -349,13 +346,13 @@ function submitToSheets(event) {
       form.reset();
       document.getElementById("file-preview").innerHTML = "";
     } else {
-      console.error("Respon aneh:", resText);
+      console.error("Respon tidak valid:", resText);
       alert("❌ Gagal mengirim. Coba lagi.");
     }
   })
   .catch(err => {
     console.error("Gagal kirim:", err);
-    alert("❌ Terjadi kesalahan koneksi.");
+    alert("❌ Terjadi kesalahan saat mengirim data.");
   });
 }
 </script>
