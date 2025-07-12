@@ -337,7 +337,7 @@ function submitToSheets(event) {
   fetch("https://script.google.com/macros/s/AKfycbyUtNpPINsiF-Wt5VORQav-l8hN6g8q1RDFOkx1J4kky3-bOGYQvADuNP_96P9aE-gc/exec", {
     method: "POST",
     body: formData
-    // ❗ Jangan set header Content-Type manual!
+    // ❗ Jangan pakai headers!
   })
   .then(res => res.text())
   .then(resText => {
@@ -346,13 +346,13 @@ function submitToSheets(event) {
       form.reset();
       document.getElementById("file-preview").innerHTML = "";
     } else {
-      console.error("Respon tidak valid:", resText);
+      console.error("Respon tidak sesuai:", resText);
       alert("❌ Gagal mengirim. Coba lagi.");
     }
   })
   .catch(err => {
     console.error("Gagal kirim:", err);
-    alert("❌ Terjadi kesalahan saat mengirim data.");
+    alert("❌ Terjadi kesalahan saat mengirim.");
   });
 }
 </script>
