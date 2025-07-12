@@ -228,3 +228,14 @@ footer {
   margin-top: 40px;
   font-size: 0.9em;
 }
+
+.breadcrumb {
+  font-size: 14px;
+  margin-bottom: 20px;
+  color: #666;
+}
+.breadcrumb a {
+  color: #3282b8;
+  text-decoration: none;
+}
+
