@@ -325,17 +325,6 @@ window.addEventListener('scroll', () => {
       return;
     }
 
-    emailjs.sendForm("service_458y15d", "template_ukcnbqz", form)
-      .then(() => {
-        alert("Pesan berhasil dikirim!");
-        form.reset();
-        document.getElementById("file-preview").innerHTML = "";
-      }, (err) => {
-        console.error("Gagal:", err);
-        alert("Gagal mengirim. Silakan coba lagi.");
-      });
-  });
-
   function previewFile(event) {
     const file = event.target.files[0];
     const preview = document.getElementById('file-preview');
@@ -350,7 +339,8 @@ window.addEventListener('scroll', () => {
       preview.innerHTML = `<p>File diunggah: ${file.name}</p>`;
     }
   }
-<!-- ✅ Script Kirim ke Google Sheets -->
+</script> 
+	<!-- ✅ Script Kirim ke Google Sheets -->
 <script>
 function submitToSheets(event) {
   event.preventDefault();
