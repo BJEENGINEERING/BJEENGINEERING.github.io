@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title>Dashboard Admin - BJE Engineering</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f6f9;
+      padding: 20px;
+    }
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      background: white;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+    th, td {
+      padding: 12px 14px;
+      border: 1px solid #ddd;
+      font-size: 14px;
+    }
+    th {
+      background: #3282b8;
+      color: white;
+    }
+    h1 {
+      color: #0f4c75;
+    }
+    .refresh-btn {
+      background: #0f4c75;
+      color: white;
+      padding: 10px 16px;
+      border: none;
+      border-radius: 6px;
+      margin-bottom: 20px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <h1>📊 Dashboard Pemesanan</h1>
+  <button class="refresh-btn" onclick="loadData()">🔄 Refresh Data</button>
+  <table id="data-table">
+    <thead>
+      <tr>
+        <th>Timestamp</th>
+        <th>Nama</th>
+        <th>Telepon</th>
+        <th>Layanan</th>
+        <th>Deskripsi</th>
+        <th>Nama File</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+
+  <script>
+    const SHEET_URL = "https://script.google.com/macros/s/AKfycbyUtNpPINsiF-Wt5VORQav-l8hN6g8q1RDFOkx1J4kky3-bOGYQvADuNP_96P9aE-gc/exec";
+
+    function loadData() {
+      fetch(SHEET_URL)
+        .then(response => response.json())
+        .then(data => {
+          const tbody = document.querySelector("#data-table tbody");
+          tbody.innerHTML = ""; // clear table
+          data.forEach(row => {
+            const tr = document.createElement("tr");
+            tr.innerHTML = `
+              <td>${row["Timestamp"] || ""}</td>
+              <td>${row["Nama"] || ""}</td>
+              <td>${row["Telepon"] || ""}</td>
+              <td>${row["Layanan"] || ""}</td>
+              <td>${row["Deskripsi"] || ""}</td>
+              <td>${row["Nama File"] || ""}</td>
+            `;
+            tbody.appendChild(tr);
+          });
+        })
+        .catch(err => {
+          console.error("Gagal memuat data:", err);
+          alert("❌ Gagal memuat data dari Google Sheets.");
+        });
+    }
+
+    // Auto load on page load
+    loadData();
+  </script>
+</body>
+</html>
