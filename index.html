@@ -357,28 +357,25 @@ function submitToSheets(event) {
     telepon: form.telepon.value,
     layanan: form.layanan.value,
     deskripsi: form.deskripsi.value,
-    filename: form.lampiran.files[0]?.name || "",
+    link_drive: form.deskripsi.value
   };
 
   fetch("https://script.google.com/macros/s/AKfycbyUtNpPINsiF-Wt5VORQav-l8hN6g8q1RDFOkx1J4kky3-bOGYQvADuNP_96P9aE-gc/exec", {
     method: "POST",
     body: JSON.stringify(data),
     headers: {
-      "Content-Type": "application/json",
-    },
+      "Content-Type": "application/json"
+    }
   })
-  .then(response => {
-    if (!response.ok) throw new Error("Gagal kirim ke Google Sheets");
-    return response.text();
-  })
-  .then(text => {
+  .then(res => res.text())
+  .then(() => {
     alert("✅ Data berhasil dikirim ke Google Sheets!");
     form.reset();
     document.getElementById("file-preview").innerHTML = "";
   })
-  .catch(error => {
-    console.error(error);
-    alert("❌ Gagal mengirim ke Google Sheets");
+  .catch(err => {
+    console.error(err);
+    alert("❌ Gagal mengirim. Coba lagi.");
   });
 }
 </script>
