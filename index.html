@@ -313,33 +313,8 @@ window.addEventListener('scroll', () => {
   s.onload = function () { WhWidgetSendButton.init(host, proto, options); };
   var x = document.getElementsByTagName('script')[0]; x.parentNode.insertBefore(s, x);
 })();
+</script>
 
-  document.getElementById("pesanForm").addEventListener("submit", function(e) {
-    e.preventDefault();
-
-    const form = this;
-    const file = form.lampiran.files[0];
-
-    if (file && file.size > 10 * 1024 * 1024) {
-      alert("Ukuran file terlalu besar! Maksimal 10MB.");
-      return;
-    }
-
-  function previewFile(event) {
-    const file = event.target.files[0];
-    const preview = document.getElementById('file-preview');
-    if (!file) return;
-    if (file.type.startsWith('image/')) {
-      const reader = new FileReader();
-      reader.onload = function(e) {
-        preview.innerHTML = `<img src="${e.target.result}" style="max-width:200px;margin-top:10px;border-radius:8px;" />`;
-      };
-      reader.readAsDataURL(file);
-    } else {
-      preview.innerHTML = `<p>File diunggah: ${file.name}</p>`;
-    }
-  }
-</script> 
 	<!-- ✅ Script Kirim ke Google Sheets -->
 <script>
 function submitToSheets(event) {
