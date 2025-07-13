@@ -58,10 +58,7 @@ s0.parentNode.insertBefore(s1,s0);
 </nav>
 
 <div class="container">
-  <div id="notif" style="display:none; background:#d4edda; padding:15px; color:#155724; border:1px solid #c3e6cb; border-radius:5px; margin-bottom:20px;">
-      ✅ Formulir berhasil dikirim! Kami akan segera menghubungi Anda.
-    </div>
-	
+ 	
 	<!-- ✅ Tentang -->
   <section id="tentang">
     <h2>Tentang Kami</h2>
@@ -118,61 +115,6 @@ s0.parentNode.insertBefore(s1,s0);
     <h2>Testimoni Pelanggan</h2>
     <p>Belum ada testimoni yang ditampilkan. Silakan isi setelah menggunakan layanan kami.</p>
   </section>
-
- <!-- ✅ Formulir Pemesanan -->
-<section id="form">
-  <h2>Formulir Pemesanan / Penawaran</h2>
-  <form id="pesanForm"
-      action="https://bjeengineering.infinityfreeapp.com/kirim.php"
-      method="POST"
-      enctype="multipart/form-data">
-  
-	  <!-- Honeypot-field (invisible bagi manusia) -->
-  <input type="text" name="middle_name" style="display:none" autocomplete="off">
-
-	  <div class="row">
-      <input type="text" name="nama" placeholder="Nama Anda" required />
-      <input type="tel" name="telepon" placeholder="Nomor WhatsApp" required />
-    </div>
-    <select name="layanan" required>
-      <option value="">Pilih Layanan</option>
-      <option value="bubut">Bubut</option>
-      <option value="milling">Milling</option>
-      <option value="slotting">Slotting</option>
-      <option value="fabrikasi">Fabrikasi</option>
-    </select>
-    <textarea name="deskripsi" rows="4" placeholder="Deskripsikan kebutuhan Anda dan tempelkan link Google Drive jika ada file..."></textarea>
-    <input type="file" name="lampiran" accept=".pdf,.jpg,.jpeg,.png,.dwg,.dxf,.sldprt,.sldasm,.stl,.step,.iges,.ipt,.iam,.f3d,.CATPart,.CATProduct,.skp,.obj,.zip,.rar,.nc,.cam,.mcam,.3dm,.x_t,.x_b,video/mp4" onchange="previewFile(event)" />
-    <small>*Upload ≤10MB. File besar kirim via Google Drive di deskripsi.</small>
-    <div id="file-preview"></div>
-    <button type="submit">Kirim Formulir</button>
-    <button type="button" onclick="kirimWhatsApp()">Kirim via WhatsApp</button>
-  </form>
-</section>
-<!-- ✅ Script Preview dan Validasi File -->
-<script>
-function previewFile(event) {
-  const file = event.target.files[0];
-  const preview = document.getElementById('file-preview');
-  if (file && file.type.startsWith('image/')) {
-    const reader = new FileReader();
-    reader.onload = e => {
-      preview.innerHTML = `<img src="${e.target.result}" style="max-width:200px;">`;
-    };
-    reader.readAsDataURL(file);
-  } else if (file) {
-    preview.innerHTML = `<p>File diunggah: ${file.name}</p>`;
-  }
-}
-
-document.getElementById('pesanForm').addEventListener('submit', function(e) {
-  const file = document.querySelector('[name="lampiran"]').files[0];
-  if (file && file.size > 10 * 1024 * 1024) {
-    e.preventDefault();
-    alert("Ukuran file terlalu besar! Maksimal 10MB.");
-  }
-});
-</script>
 	
   <!-- ✅ Kontak -->
   <section id="kontak">
@@ -347,11 +289,5 @@ function kirimWhatsApp() {
   window.open(`https://wa.me/628982425835?text=${text}`, '_blank');
 }
 </script>
-<!-- ✅ Tambahkan ini SEBELUM </body> -->
-  <script>
-  if (window.location.search.includes('sukses=1')) {
-    document.getElementById('notif').style.display = 'block';
-  }
-  </script>
 </body>
 </html>

@@ -102,60 +102,6 @@ h2 {
   margin-bottom: 10px;
 }
 
-/* Form */
-form {
-  background: white;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-  width: 100%;
-  max-width: 600px;
-  margin: auto;
-  box-sizing: border-box;
-}
-
-form .row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-
-form .row input {
-  flex: 1;
-  min-width: 48%;
-}
-
-form input,
-form textarea,
-form select {
-  width: 100%;
-  max-width: 100%;
-  padding: 12px;
-  margin-bottom: 15px;
-  border-radius: 6px;
-  border: 1px solid #ccc;
-  font-family: 'Poppins', sans-serif;
-  box-sizing: border-box;
-}
-
-form button {
-  padding: 12px 20px;
-  background: #3282b8;
-  color: white;
-  border: none;
-  border-radius: 6px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: background 0.3s ease;
-  margin-right: 10px;
-}
-
-form button:hover {
-  background: #0f4c75;
-}
-
-
-
 /* Tab Galeri */
 .tab {
   text-align: center;
@@ -206,19 +152,6 @@ form button:hover {
   gap: 8px;
 }
 
-/* File preview */
-#file-preview img {
-  max-width: 200px;
-  margin-top: 10px;
-  border-radius: 8px;
-}
-
-#file-preview p {
-  margin-top: 10px;
-  font-size: 0.9em;
-  color: #555;
-}
-
 /* Footer */
 footer {
   background: #1b262c;
@@ -255,3 +188,19 @@ footer {
 .floating-wa:hover {
   background-color: #1ebe57;
 }
+
+/* Tombol Umum */
+.button {
+  display: inline-block;
+  padding: 12px 20px;
+  background-color: #3282b8;
+  color: white;
+  border-radius: 6px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+.button:hover {
+  background-color: #0f4c75;
+}
+
