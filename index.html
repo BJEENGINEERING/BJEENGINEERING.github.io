@@ -132,7 +132,7 @@ s0.parentNode.insertBefore(s1,s0);
     </select>
     <textarea name="deskripsi" rows="4" placeholder="Deskripsikan kebutuhan Anda dan tempelkan link Google Drive jika ada file..."></textarea>
     <input type="file" name="lampiran" accept=".pdf,.jpg,.jpeg,.png,.dwg,.dxf,.sldprt,.sldasm,.stl,.step,.iges,.ipt,.iam,.f3d,.CATPart,.CATProduct,.skp,.obj,.zip,.rar,.nc,.cam,.mcam,.3dm,.x_t,.x_b,video/mp4" onchange="previewFile(event)" />
-    <small>*Upload ≤30MB. File besar kirim via Google Drive di deskripsi.</small>
+    <small>*Upload ≤10MB. File besar kirim via Google Drive di deskripsi.</small>
     <div id="file-preview"></div>
     <button type="submit">Kirim Formulir</button>
     <button type="button" onclick="kirimWhatsApp()">Kirim via WhatsApp</button>
@@ -280,9 +280,8 @@ function previewFile(event) {
 }
 document.getElementById('pesanForm').addEventListener('submit', function(e) {
   const file = document.querySelector('[name="lampiran"]').files[0];
- if (file && file.size > 30 * 1024 * 1024) {
-  e.preventDefault();
-  alert("Ukuran file terlalu besar! Maksimal 30MB.");
+ if (file && file.size > 10 * 1024 * 1024) {
+  alert("Ukuran file terlalu besar! Maksimal 10MB.");
 }
 });
 // Scrollspy
