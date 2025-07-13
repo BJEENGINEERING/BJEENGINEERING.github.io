@@ -122,7 +122,11 @@ s0.parentNode.insertBefore(s1,s0);
       action="https://bjeengineering.infinityfreeapp.com/kirim.php"
       method="POST"
       enctype="multipart/form-data">
-    <div class="row">
+  
+	  <!-- Honeypot-field (invisible bagi manusia) -->
+  <input type="text" name="middle_name" style="display:none" autocomplete="off">
+
+	  <div class="row">
       <input type="text" name="nama" placeholder="Nama Anda" required />
       <input type="tel" name="telepon" placeholder="Nomor WhatsApp" required />
     </div>
