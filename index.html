@@ -118,7 +118,7 @@ s0.parentNode.insertBefore(s1,s0);
  <!-- ✅ Formulir Pemesanan -->
 <section id="form">
   <h2>Formulir Pemesanan / Penawaran</h2>
-  <form id="pesanForm" onsubmit="submitToSheets(event)">
+  <form id="pesanForm" action="kirim.php" method="POST" enctype="multipart/form-data">
     <div class="row">
       <input type="text" name="nama" placeholder="Nama Anda" required />
       <input type="tel" name="telepon" placeholder="Nomor WhatsApp" required />
@@ -155,6 +155,7 @@ function previewFile(event) {
   }
 }
 </script>
+	
   <!-- ✅ Kontak -->
   <section id="kontak">
     <h2>Hubungi Kami</h2>
