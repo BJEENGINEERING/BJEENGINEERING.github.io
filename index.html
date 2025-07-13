@@ -118,7 +118,10 @@ s0.parentNode.insertBefore(s1,s0);
  <!-- ✅ Formulir Pemesanan -->
 <section id="form">
   <h2>Formulir Pemesanan / Penawaran</h2>
-  <form id="pesanForm" action="https://bjeengineering.infinityfreeapp.com/kirim.php" method="POST" enctype="multipart/form-data">
+  <form id="pesanForm"
+      action="https://bjeengineering.infinityfreeapp.com/kirim.php"
+      method="POST"
+      enctype="multipart/form-data">
     <div class="row">
       <input type="text" name="nama" placeholder="Nama Anda" required />
       <input type="tel" name="telepon" placeholder="Nomor WhatsApp" required />
@@ -143,17 +146,24 @@ s0.parentNode.insertBefore(s1,s0);
 function previewFile(event) {
   const file = event.target.files[0];
   const preview = document.getElementById('file-preview');
-  if (!file) return;
-  if (file.type.startsWith('image/')) {
+  if (file && file.type.startsWith('image/')) {
     const reader = new FileReader();
-    reader.onload = function(e) {
-      preview.innerHTML = `<img src="${e.target.result}" style="max-width:200px;margin-top:10px;border-radius:8px;" />`;
+    reader.onload = e => {
+      preview.innerHTML = `<img src="${e.target.result}" style="max-width:200px;">`;
     };
     reader.readAsDataURL(file);
-  } else {
+  } else if (file) {
     preview.innerHTML = `<p>File diunggah: ${file.name}</p>`;
   }
 }
+
+document.getElementById('pesanForm').addEventListener('submit', function(e) {
+  const file = document.querySelector('[name="lampiran"]').files[0];
+  if (file && file.size > 10 * 1024 * 1024) {
+    e.preventDefault();
+    alert("Ukuran file terlalu besar! Maksimal 10MB.");
+  }
+});
 </script>
 	
   <!-- ✅ Kontak -->
