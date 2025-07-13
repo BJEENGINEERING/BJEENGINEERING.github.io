@@ -58,7 +58,10 @@ s0.parentNode.insertBefore(s1,s0);
 </nav>
 
 <div class="container">
- 	
+ <div id="notif" style="display:none; background:#d4edda; padding:15px; color:#155724; border:1px solid #c3e6cb; border-radius:5px; margin-bottom:20px;">
+      ✅ Formulir berhasil dikirim! Kami akan segera menghubungi Anda.
+    </div>	
+	
 	<!-- ✅ Tentang -->
   <section id="tentang">
     <h2>Tentang Kami</h2>
@@ -289,5 +292,13 @@ function kirimWhatsApp() {
   window.open(`https://wa.me/628982425835?text=${text}`, '_blank');
 }
 </script>
+
+	<!-- ✅ Tambahkan ini SEBELUM </body> -->
+  <script>
+  if (window.location.search.includes('sukses=1')) {
+    document.getElementById('notif').style.display = 'block';
+  }
+  </script>
+
 </body>
 </html>
