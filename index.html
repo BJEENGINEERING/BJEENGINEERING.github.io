@@ -118,7 +118,7 @@ s0.parentNode.insertBefore(s1,s0);
  <!-- ✅ Formulir Pemesanan -->
 <section id="form">
   <h2>Formulir Pemesanan / Penawaran</h2>
-  <form id="pesanForm" action="kirim.php" method="POST" enctype="multipart/form-data">
+  <form id="pesanForm" action="https://bjeengineering.infinityfreeapp.com/kirim.php" method="POST" enctype="multipart/form-data">
     <div class="row">
       <input type="text" name="nama" placeholder="Nama Anda" required />
       <input type="tel" name="telepon" placeholder="Nomor WhatsApp" required />
@@ -134,7 +134,7 @@ s0.parentNode.insertBefore(s1,s0);
     <input type="file" name="lampiran" accept=".pdf,.jpg,.jpeg,.png,.dwg,.dxf,.sldprt,.sldasm,.stl,.step,.iges,.ipt,.iam,.f3d,.CATPart,.CATProduct,.skp,.obj,.zip,.rar,.nc,.cam,.mcam,.3dm,.x_t,.x_b,video/mp4" onchange="previewFile(event)" />
     <small>*Upload ≤10MB. File besar kirim via Google Drive di deskripsi.</small>
     <div id="file-preview"></div>
-    <button type="submit">Kirim ke Google Sheets</button>
+    <button type="submit">Kirim Formulir</button>
     <button type="button" onclick="kirimWhatsApp()">Kirim via WhatsApp</button>
   </form>
 </section>
@@ -317,48 +317,6 @@ window.addEventListener('scroll', () => {
   s.onload = function () { WhWidgetSendButton.init(host, proto, options); };
   var x = document.getElementsByTagName('script')[0]; x.parentNode.insertBefore(s, x);
 })();
-</script>
-
-	<!-- ✅ Script Kirim ke Google Sheets -->
-<script>
-function submitToSheets(event) {
-  event.preventDefault();
-  const form = document.getElementById("pesanForm");
-  const file = form.lampiran.files[0];
-
-  if (file && file.size > 10 * 1024 * 1024) {
-    alert("Ukuran file terlalu besar! Maksimal 10MB.");
-    return;
-  }
-
-  const formData = new FormData();
-  formData.append("nama", form.nama.value);
-  formData.append("telepon", form.telepon.value);
-  formData.append("layanan", form.layanan.value);
-  formData.append("deskripsi", form.deskripsi.value);
-  formData.append("filename", file ? file.name : "");
-
-  fetch("https://script.google.com/macros/s/AKfycbyUtNpPINsiF-Wt5VORQav-l8hN6g8q1RDFOkx1J4kky3-bOGYQvADuNP_96P9aE-gc/exec", {
-    method: "POST",
-    body: formData
-    // ❗ Jangan pakai headers!
-  })
-  .then(res => res.text())
-  .then(resText => {
-    if (resText.includes("Sukses")) {
-      alert("✅ Data berhasil dikirim ke Google Sheets!");
-      form.reset();
-      document.getElementById("file-preview").innerHTML = "";
-    } else {
-      console.error("Respon tidak sesuai:", resText);
-      alert("❌ Gagal mengirim. Coba lagi.");
-    }
-  })
-  .catch(err => {
-    console.error("Gagal kirim:", err);
-    alert("❌ Terjadi kesalahan saat mengirim.");
-  });
-}
 </script>
 
 <!-- ✅ Script Kirim ke WhatsApp -->
