@@ -19,7 +19,9 @@ header {
 
 /* === NAVBAR FIX FINAL === */
 nav {
-  background: #1b262c;
+  /* background: #1b262c; */ /* Hapus baris ini atau jadikan komentar */
+  background: rgba(27, 38, 44, 0.85); /* Tambahkan ini untuk transparansi */
+  backdrop-filter: blur(4px); /* Tambahkan ini untuk efek blur */
   display: flex;
   justify-content: center;
   align-items: center;
