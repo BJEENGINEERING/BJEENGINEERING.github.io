@@ -167,8 +167,9 @@ s0.parentNode.insertBefore(s1,s0);
   border-top: 1px solid #dceefc;
   border-bottom: 1px solid #dceefc;
 ">
-  <h2 style="color: #0f4c75; font-size: 28px; margin-bottom: 16px;">
-    Siap Menghubungi Kami?
+  <section id="hubungi-kami">
+<h2 style="color: #0f4c75; font-size: 28px; margin-bottom: 16px;">
+ 	Siap Menghubungi Kami?
   </h2>
     <p style="max-width: 700px; margin: auto; color: #333; font-size: 16px; line-height: 1.6;">
   Dapatkan penawaran terbaik untuk kebutuhan industri Anda hari ini. Hubungi tim kami sekarang!
@@ -300,6 +301,51 @@ function kirimWhatsApp() {
     document.getElementById('notif').style.display = 'block';
   }
   </script>
+
+<script>
+  const waBtn = document.getElementById("draggable-wa");
+  let isDragging = false;
+  let offset = { x: 0, y: 0 };
+
+  waBtn.addEventListener("mousedown", (e) => {
+    isDragging = true;
+    offset.x = e.clientX - waBtn.offsetLeft;
+    offset.y = e.clientY - waBtn.offsetTop;
+  });
+
+  document.addEventListener("mousemove", (e) => {
+    if (isDragging) {
+      waBtn.style.left = (e.clientX - offset.x) + "px";
+      waBtn.style.top = (e.clientY - offset.y) + "px";
+      waBtn.style.bottom = "auto";
+      waBtn.style.right = "auto";
+    }
+  });
+
+  document.addEventListener("mouseup", () => {
+    isDragging = false;
+  });
+
+  // Touch support (untuk HP)
+  waBtn.addEventListener("touchstart", (e) => {
+    isDragging = true;
+    offset.x = e.touches[0].clientX - waBtn.offsetLeft;
+    offset.y = e.touches[0].clientY - waBtn.offsetTop;
+  });
+
+  document.addEventListener("touchmove", (e) => {
+    if (isDragging) {
+      waBtn.style.left = (e.touches[0].clientX - offset.x) + "px";
+      waBtn.style.top = (e.touches[0].clientY - offset.y) + "px";
+      waBtn.style.bottom = "auto";
+      waBtn.style.right = "auto";
+    }
+  });
+
+  document.addEventListener("touchend", () => {
+    isDragging = false;
+  });
+</script>
 
 </body>
 </html>
