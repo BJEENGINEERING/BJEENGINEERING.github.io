@@ -17,34 +17,55 @@ header {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
+/* === NAVBAR FIX FINAL === */
 nav {
   background: #1b262c;
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
+  align-items: center;
+  gap: 0;
   position: sticky;
   top: 0;
   z-index: 1000;
-  text-align: center;
+  height: 48px;
 }
 
 nav a {
-  color: white;
-  padding: 12px 16px;
-  font-size: 14px;
-  text-decoration: none;
-  transition: background 0.3s ease;
-  flex: 1 1 auto;
+  color: #fff !important; /* PENTING, zat menimpa aturan lain */
+  font-size: 16px;
+  padding: 0 28px;
+  height: 48px;
+  line-height: 48px;
   text-align: center;
-  min-width: 120px;
+  text-decoration: none;
+  transition: background 0.3s, color 0.3s;
+  font-weight: 500;
+  border: none;
+  background: none;
+  display: flex;
+  align-items: center;
+  opacity: 1 !important; /* Supaya tidak transparan */
+}
+
+nav a:hover,
+nav a.active {
+  background: #0f4c75 !important;
+  color: #fff !important;
+  opacity: 1 !important;
 }
 
 @media (max-width: 600px) {
-  nav a {
-    padding: 10px;
-    font-size: 13px;
+  nav {
+    flex-direction: column;
+    height: auto;
   }
-
+  nav a {
+    font-size: 14px;
+    padding: 0 12px;
+    height: 40px;
+    line-height: 40px;
+  }
+}
   .floating-wa {
     right: 20px;
     bottom: 20px;
@@ -235,20 +256,3 @@ footer a:hover {
 #draggable-wa:active {
   cursor: grabbing;
 }
-
-.breadcrumb {
-  font-size: 14px;
-  margin-bottom: 20px;
-  color: #666;
-}
-
-.breadcrumb a {
-  color: #3282b8;
-  text-decoration: none;
-}
-
-.breadcrumb span {
-  color: #ffffff; /* Ubah ke putih agar jelas di background gelap */
-  font-weight: bold;
-}
-
