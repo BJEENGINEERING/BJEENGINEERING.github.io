@@ -1,3 +1,4 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
 
 body {
@@ -16,7 +17,6 @@ header {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* ✅ Perbaikan Navigasi agar tampil baik di Android */
 nav {
   background: #1b262c;
   display: flex;
@@ -39,7 +39,6 @@ nav a {
   min-width: 120px;
 }
 
-/* ✅ Tambahan Media Query untuk Android dan layar kecil */
 @media (max-width: 600px) {
   nav a {
     padding: 10px;
@@ -54,6 +53,10 @@ nav a {
 
   .container {
     padding: 20px 10px;
+  }
+
+  footer {
+    font-size: 0.9em;
   }
 }
 
@@ -74,7 +77,6 @@ h2 {
   color: #0f4c75;
 }
 
-/* Galeri */
 .gallery {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -102,7 +104,6 @@ h2 {
   margin-bottom: 10px;
 }
 
-/* Tab Galeri */
 .tab {
   text-align: center;
   margin-bottom: 20px;
@@ -123,7 +124,6 @@ h2 {
   color: white;
 }
 
-/* Testimoni */
 .testimonials blockquote {
   background: #f1f5f9;
   padding: 15px;
@@ -133,7 +133,6 @@ h2 {
   font-style: italic;
 }
 
-/* Tombol WA */
 .floating-wa {
   position: fixed;
   bottom: 24px;
@@ -152,14 +151,26 @@ h2 {
   gap: 8px;
 }
 
-/* Footer */
 footer {
-  background: #1b262c;
-  color: white;
+  background: rgba(27, 38, 44, 0.85);
+  color: #f0f0f0;
   text-align: center;
-  padding: 20px;
+  padding: 24px 16px;
   margin-top: 40px;
-  font-size: 0.9em;
+  font-size: 0.95em;
+  line-height: 1.6;
+  backdrop-filter: blur(4px);
+  padding-bottom: 100px;
+}
+
+footer a {
+  color: #ffffff;
+  font-weight: 500;
+  text-decoration: underline;
+}
+
+footer a:hover {
+  color: #00e0b8;
 }
 
 .breadcrumb {
@@ -172,57 +183,6 @@ footer {
   text-decoration: none;
 }
 
-.floating-wa {
-  position: fixed;
-  bottom: 20px;
-  right: 150px;
-  background-color: #25D366;
-  color: white;
-  padding: 12px 16px;
-  border-radius: 50px;
-  text-decoration: none;
-  font-weight: bold;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-  z-index: 999;
-}
-.floating-wa:hover {
-  background-color: #1ebe57;
-}
-
-/* Tombol Umum */
-.button {
-  display: inline-block;
-  padding: 12px 20px;
-  background-color: #3282b8;
-  color: white;
-  border-radius: 6px;
-  font-weight: bold;
-  text-decoration: none;
-  transition: background 0.3s ease;
-}
-.button:hover {
-  background-color: #0f4c75;
-}
-
-/* === Perbaikan tampilan breadcrumb === */
-nav.breadcrumb {
-  background: none;
-  position: static;
-  display: block;
-  padding: 0;
-  margin-bottom: 20px;
-  font-size: 14px;
-  color: #666;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-nav.breadcrumb a {
-  color: #3282b8;
-  text-decoration: none;
-}
-
-/* === Fitur layanan seperti kotak keunggulan === */
 .features {
   display: flex;
   flex-wrap: wrap;
@@ -238,7 +198,6 @@ nav.breadcrumb a {
   box-shadow: 0 2px 8px rgba(0,0,0,0.05);
 }
 
-/* === Tombol umum === */
 .button {
   display: inline-block;
   padding: 12px 20px;
@@ -256,7 +215,8 @@ nav.breadcrumb a {
 #draggable-wa {
   position: fixed;
   bottom: 80px;
-  right: 20px;
+  left: 20px;
+  right: auto;
   background-color: #25D366;
   color: white;
   font-size: 24px;
@@ -275,5 +235,3 @@ nav.breadcrumb a {
 #draggable-wa:active {
   cursor: grabbing;
 }
-
-
