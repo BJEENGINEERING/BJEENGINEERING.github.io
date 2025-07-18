@@ -1,56 +1,63 @@
-
 <!DOCTYPE html>
 <html lang="id">
 <head>
   <meta charset="UTF-8">
-  <title>Portofolio Proyek - BJE Engineering</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Dokumentasi proyek besar dan spesial oleh BJE Engineering.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portofolio BJE Group</title>
   <link rel="stylesheet" href="style.css">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css" rel="stylesheet" />
 </head>
 <body>
   <header>
-    <h1>Portofolio Proyek</h1>
-    <p>Dokumentasi proyek unggulan kami dalam bidang machining dan fabrikasi industri.</p>
+    <h1>Portofolio BJE Group</h1>
+    <p>Kumpulan Proyek dari Semua Divisi: Engineering, Interior, Robotics, dan Studio</p>
   </header>
 
-  <div class="container">
-    <section>
-      <h2>Gearbox Custom & Keyway</h2>
-      <div class="gallery">
-        <div class="card">
-          <a href="images/IMG_20200715_124709.jpg" data-lightbox="gearbox" data-title="Pengerjaan gear custom">
-            <img src="images/IMG_20200715_124709.jpg" alt="Gear Custom">
-          </a>
-          <p>Gear custom untuk gearbox industri</p>
-        </div>
-      </div>
+  <nav id="navbar">
+    <a href="index.html">Beranda</a>
+    <a href="bje_interior.html">BJE Interior</a>
+    <a href="bje_robotics.html">BJE Robotics</a>
+    <a href="bje_studio.html">BJE Studio</a>
+    <a href="portofolio.html">Portofolio</a>
+  </nav>
+
+  <main class="container">
+    <section class="filters">
+      <button onclick="filterGaleri('all')">Semua</button>
+      <button onclick="filterGaleri('engineering')">Engineering</button>
+      <button onclick="filterGaleri('interior')">Interior</button>
+      <button onclick="filterGaleri('robotics')">Robotics</button>
+      <button onclick="filterGaleri('studio')">Studio</button>
     </section>
 
-    <section>
-      <h2>Rangka Besi & Jig Kap Mobil</h2>
-      <div class="gallery">
-        <div class="card">
-          <a href="images/IMG_20191009_183626.jpg" data-lightbox="rangka" data-title="Rangka Besi Custom">
-            <img src="images/IMG_20191009_183626.jpg" alt="Rangka Besi">
-          </a>
-          <p>Rangka besi penguat mesin</p>
-        </div>
-        <div class="card">
-          <a href="images/IMG_20211115_095125_1.jpg" data-lightbox="rangka" data-title="Jig Kap Mobil">
-            <img src="images/IMG_20211115_095125_1.jpg" alt="Jig Kap Mobil">
-          </a>
-          <p>Fixture jig untuk perakitan kap mobil</p>
-        </div>
-      </div>
+    <section class="gallery" id="galeri">
+      <!-- Engineering -->
+      <div class="card engineering"><img src="images/engineering.jpg" alt="Engineering"><p>Mesin Custom & 3D Print</p></div>
+
+      <!-- Interior -->
+      <div class="card interior"><img src="images/interior1.jpg" alt="Kitchen Set"><p>Kitchen Set Custom</p></div>
+      <div class="card interior"><img src="images/interior2.jpg" alt="Ruang Tamu"><p>Desain Ruang Tamu</p></div>
+
+      <!-- Robotics -->
+      <div class="card robotics"><img src="images/robot1.jpg" alt="Robot Edukasi"><p>Robot Edukatif Arduino</p></div>
+      <div class="card robotics"><img src="images/robot2.jpg" alt="Otomatisasi"><p>Otomatisasi Produksi</p></div>
+
+      <!-- Studio -->
+      <div class="card studio"><img src="images/studio1.jpg" alt="Logo Brand"><p>Desain Logo Usaha</p></div>
+      <div class="card studio"><img src="images/studio2.jpg" alt="Poster"><p>Poster Promosi Digital</p></div>
     </section>
-  </div>
+  </main>
 
   <footer>
-    <p>&copy; 2025 BJE ENGINEERING | Portofolio Proyek</p>
+    <p>&copy; 2025 BJE GROUP | Portofolio Gabungan</p>
   </footer>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js"></script>
+  <script>
+    function filterGaleri(kategori) {
+      const items = document.querySelectorAll('.gallery .card');
+      items.forEach(item => {
+        item.style.display = (kategori === 'all' || item.classList.contains(kategori)) ? 'block' : 'none';
+      });
+    }
+  </script>
 </body>
 </html>
