@@ -33,6 +33,9 @@
 <!-- AOS (Animate on Scroll) -->
 <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
+<!-- GLightbox CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
+
 </head>
 <body>
 
@@ -112,7 +115,12 @@ s0.parentNode.insertBefore(s1,s0);
       <div class="card milling"><img loading="lazy" src="images/IMG_20180722_221652.jpg" alt="Proses Milling"><p>Proses Milling</p></div>
        <div class="card milling"><img loading="lazy" src="images/custom repair manual milling.jpg" alt="custom repair manual milling"><p>Custom Repair Manual Milling</p></div>
       <div class="card milling"><img loading="lazy" src="images/IMG_20191117_163009.jpg" alt="Custom Part"><p>Custom Part</p></div>
-      <div class="card milling"><img loading="lazy" src="images/IMG_20200110_203153.jpg" alt="Slotting & tapping"><p>Slotting & Tapping</p></div>
+      <div class="card">
+  	<a href="images/IMG_20200110_203153.jpg" class="glightbox" data-gallery="galeri1">
+   	 <img src="images/IMG_20200110_203153.jpg" alt="Slotting & Tapping">
+  	</a>
+	  <p>Slotting & Tapping</p>
+	</div>
       <div class="card slotting"><img loading="lazy" src="images/IMG_20180709_091119.jpg" alt="Slotting Keyway"><p>Slotting Keyway</p></div>
       <div class="card fabrikasi"><img loading="lazy" src="images/IMG_20191009_183626.jpg" alt="Rangka Besi"><p>Rangka Besi</p></div>
       <div class="card fabrikasi"><img loading="lazy" src="images/IMG_20200814_192100.jpg" alt="Custom Bracket Gearbox Motor"><p>Custom Bracket Gearbox Motor</p></div>
@@ -369,6 +377,12 @@ function kirimWhatsApp() {
     once: true
   });
 </script>
-	
+
+<!-- GLightbox JS -->
+<script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+<script>
+  const lightbox = GLightbox({ selector: '.glightbox' });
+</script>	
+
 </body>
 </html>
