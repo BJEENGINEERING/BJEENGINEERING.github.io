@@ -366,10 +366,10 @@ footer a:hover {
   color: #333;
 }
 
-.swiper-slide footer {
+..swiper-slide footer {
   margin-top: 10px;
   font-weight: bold;
-  color: #0f4c75;
+  color: #1b1b1b; /* lebih gelap dan terbaca jelas */
   font-style: normal;
   text-align: right;
 }
