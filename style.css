@@ -349,3 +349,32 @@ footer a:hover {
   100% { transform: rotate(360deg); }
 }
 
+.swiper {
+  width: 100%;
+  padding: 30px 0;
+}
+
+.swiper-slide {
+  background: #f8f9fa;
+  border-left: 4px solid #3282b8;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  max-width: 700px;
+  margin: auto;
+  font-style: italic;
+  color: #333;
+}
+
+.swiper-slide footer {
+  margin-top: 10px;
+  font-weight: bold;
+  color: #0f4c75;
+  font-style: normal;
+  text-align: right;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: #3282b8;
+}
+
