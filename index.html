@@ -473,5 +473,16 @@ function kirimWhatsApp() {
   });
 </script>
 
+	<script>
+  window.addEventListener("scroll", function () {
+    const waBtn = document.getElementById("draggable-wa");
+    if (window.scrollY > 400) {
+      waBtn.classList.add("show");
+    } else {
+      waBtn.classList.remove("show");
+    }
+  });
+</script>
+	
 </body>
 </html>
