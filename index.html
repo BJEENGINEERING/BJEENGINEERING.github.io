@@ -494,6 +494,14 @@ function kirimWhatsApp() {
     preloader.style.display = "none";
   });
 </script>
-	
+
+	<!-- ✅ Script untuk menghilangkan preloader setelah halaman selesai dimuat -->
+<script>
+  window.addEventListener("load", function () {
+    const preloader = document.getElementById("preloader");
+    preloader.style.display = "none";
+  });
+</script>
+
 </body>
 </html>
