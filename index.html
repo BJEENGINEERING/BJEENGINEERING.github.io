@@ -26,6 +26,13 @@
   <meta name="twitter:image" content="https://bjeengineering.github.io/images/logo.jpg">
 
   <meta name="google-site-verification" content="FQG-vfNG0KSOUC5MPX1YazIX4PUioZaVuJT2VyhyG3Q" />
+
+	<!-- ANIMATE.CSS untuk animasi masuk -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
+<!-- AOS (Animate on Scroll) -->
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
 </head>
 <body>
 
@@ -43,7 +50,7 @@ s0.parentNode.insertBefore(s1,s0);
 </script>
 
 <!-- ✅ Header dan Navigasi -->
-<header>
+<header data-aos="fade-down">
   <h1>BJE ENGINEERING</h1>
   <p>Spesialis Bubut, Milling, Slotting, dan Fabrikasi Industri</p>
 </header>
@@ -57,12 +64,12 @@ s0.parentNode.insertBefore(s1,s0);
 </nav>
 
 <div class="container">
- <div id="notif" style="display:none; background:#d4edda; padding:15px; color:#155724; border:1px solid #c3e6cb; border-radius:5px; margin-bottom:20px;">
+ <div id="notif" class="animate__animated animate__bounceIn">style="display:none; background:#d4edda; padding:15px; color:#155724; border:1px solid #c3e6cb; border-radius:5px; margin-bottom:20px;">
       ✅ Formulir berhasil dikirim! Kami akan segera menghubungi Anda.
     </div>	
 	
 	<!-- ✅ Tentang -->
-  <section id="tentang">
+  <section id="tentang" data-aos="fade-up">
     <h2>Tentang Kami</h2>
     <p><strong>BJE Engineering</strong> adalah bengkel <a href="jasa-bubut-cikarang.html">bubut</a> dan <a href="jasa-milling-cikarang.html">machining</a> berlokasi di Cikarang, melayani pembuatan dan perbaikan <a href="fabrikasi-komponen-industri.html">komponen industri</a> sejak 2011.</p>
 <div class="highlight-box">
@@ -79,7 +86,7 @@ s0.parentNode.insertBefore(s1,s0);
   </section>
 
   <!-- ✅ Galeri -->
-  <section id="galeri">
+  <section id="galeri" data-aos="fade-up" data-aos-delay="100">
    <h2>Galeri Hasil Kerja</h2>
 	<p style="text-align:center; max-width:700px; margin:10px auto 30px;">
   	Kami mengerjakan berbagai proyek <strong>bubut, milling, slotting</strong>, dan <strong>fabrikasi komponen industri</strong> secara presisi.
@@ -125,7 +132,7 @@ s0.parentNode.insertBefore(s1,s0);
   </section>
 	
   <!-- ✅ Kontak -->
-  <section id="kontak">
+  <section id="kontak" data-aos="zoom-in">
     <h2>Hubungi Kami</h2>
     <p>📍 Ruko Gardenia Blok F.08, Jababeka 2, Cikarang Timur, Bekasi</p>
     <p>📞 <a href="https://wa.me/628122919736" target="_blank">0812-2919-736</a> / <a href="https://wa.me/628982425835" target="_blank">0898-2425-835</a></p>
@@ -353,5 +360,15 @@ function kirimWhatsApp() {
   });
 </script>
 
+	<!-- Script AOS -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 800,
+    offset: 100,
+    once: true
+  });
+</script>
+	
 </body>
 </html>
