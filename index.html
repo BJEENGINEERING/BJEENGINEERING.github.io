@@ -42,7 +42,11 @@
 </head>
 <body>
 
-<!-- ✅ Live Chat Tawk.to -->
+	<div id="preloader">
+  <div class="loader"></div>
+</div>
+
+	<!-- ✅ Live Chat Tawk.to -->
 <script type="text/javascript">
 var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
 (function(){
@@ -481,6 +485,13 @@ function kirimWhatsApp() {
     } else {
       waBtn.classList.remove("show");
     }
+  });
+</script>
+
+	<script>
+  window.addEventListener("load", function () {
+    const preloader = document.getElementById("preloader");
+    preloader.style.display = "none";
   });
 </script>
 	
