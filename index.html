@@ -36,6 +36,9 @@
 <!-- GLightbox CSS -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
 
+	<!-- Typed.js -->
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+
 </head>
 <body>
 
@@ -55,7 +58,7 @@ s0.parentNode.insertBefore(s1,s0);
 <!-- ✅ Header dan Navigasi -->
 <header data-aos="fade-down">
   <h1>BJE ENGINEERING</h1>
-  <p>Spesialis Bubut, Milling, Slotting, dan Fabrikasi Industri</p>
+  <p><span id="typed-text"></span></p>
 </header>
 
 <nav id="navbar">
@@ -453,6 +456,22 @@ function kirimWhatsApp() {
 <script>
   const lightbox = GLightbox({ selector: '.glightbox' });
 </script>	
+
+<!-- Typed.js Script -->
+<script>
+  var typed = new Typed('#typed-text', {
+    strings: [
+      "Spesialis Bubut Presisi",
+      "Jasa Milling & Slotting",
+      "Fabrikasi Komponen Industri",
+      "Layanan Teknik Profesional"
+    ],
+    typeSpeed: 50,
+    backSpeed: 30,
+    backDelay: 2000,
+    loop: true
+  });
+</script>
 
 </body>
 </html>
