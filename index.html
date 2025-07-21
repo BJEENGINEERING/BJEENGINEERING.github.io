@@ -211,10 +211,28 @@ s0.parentNode.insertBefore(s1,s0);
   </section>
 
   <!-- ✅ Testimoni -->
-  <section id="testimoni">
-    <h2>Testimoni Pelanggan</h2>
-    <p>Belum ada testimoni yang ditampilkan. Silakan isi setelah menggunakan layanan kami.</p>
-  </section>
+<section id="testimoni" data-aos="fade-up">
+  <h2>Testimoni Pelanggan</h2>
+
+  <div class="swiper mySwiper">
+    <div class="swiper-wrapper">
+
+      <!-- ✅ Testimoni 1 -->
+      <div class="swiper-slide">
+        <blockquote>
+          ⭐⭐⭐⭐⭐<br>
+          Hasil bubutnya rapi dan cepat selesai. Harga juga terjangkau. Terima kasih BJE!
+          <footer>– Pak Budi, Cikarang</footer>
+        </blockquote>
+      </div>
+    </div>
+
+    <!-- 🔄 Navigasi -->
+    <div class="swiper-pagination"></div>
+  </div>
+</section>
+
+
 	
   <!-- ✅ Kontak -->
   <section id="kontak" data-aos="zoom-in">
@@ -503,5 +521,19 @@ function kirimWhatsApp() {
   });
 </script>
 
+	<script>
+  var swiper = new Swiper(".mySwiper", {
+    loop: true,
+    autoplay: {
+      delay: 5000,
+    },
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+  });
+</script>
+
+	
 </body>
 </html>
