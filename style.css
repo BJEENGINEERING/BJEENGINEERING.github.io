@@ -9,13 +9,12 @@ body {
 }
 
 header {
-  background: url('images/bje group logo 6.jpg') center center / cover no-repeat fixed;
-  color: #fff;
-  padding: 120px 20px;
+  background: linear-gradient(135deg, #1363DF, #06283D); /* Biru elektrik ke biru gelap */
+  color: #ffffff;
+  padding: 60px 20px;
   text-align: center;
   box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
-  border-bottom: 3px solid #47B5FF;
-  position: relative;
+  border-bottom: 3px solid #47B5FF; /* garis aksen tipis */
 }
 
 nav {
