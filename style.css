@@ -379,18 +379,23 @@ footer a:hover {
 }
 
     /* ✅ Tambahan styling dropdown akun modern */
-.account-dropdown {
+.account-dropdown-row {
   position: absolute;
   top: 16px;
   right: 24px;
-  z-index: 2000;
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
   flex-wrap: nowrap;
+  z-index: 2000;
 }
 
-/* Grup pencarian */
+/* Kontainer pencarian */
+.search-container {
+  display: flex;
+  align-items: center;
+}
+
 .search-inline {
   display: flex;
   align-items: center;
@@ -399,15 +404,15 @@ footer a:hover {
 
 .search-box,
 .search-select {
-  padding: 6px 12px;
+  padding: 6px 10px;
   font-size: 14px;
-  border-radius: 6px;
   border: 1px solid #ccc;
+  border-radius: 6px;
 }
 
 .search-btn {
   background: #3282b8;
-  color: white;
+  color: #fff;
   border: none;
   border-radius: 6px;
   padding: 6px 12px;
@@ -418,16 +423,13 @@ footer a:hover {
   background: #2c6fa3;
 }
 
-/* Tombol kanan (ikon, login, avatar) */
-.icon-buttons,
-.auth-buttons,
-.avatar-container {
+/* Tombol ikon */
+.icon-buttons {
   display: flex;
   align-items: center;
   gap: 8px;
 }
 
-/* Tombol ikon */
 .icon-button {
   background: none;
   border: none;
@@ -449,26 +451,39 @@ footer a:hover {
   border-radius: 50%;
   object-fit: cover;
 }
+.avatar.small {
+  width: 32px;
+  height: 32px;
+  margin-right: 10px;
+}
 
-/* Tombol login & daftar */
-.auth-buttons a {
+/* Tombol login / daftar */
+.auth-buttons {
+  display: flex;
+  gap: 8px;
+}
+
+.login-btn,
+.register-btn {
+  padding: 6px 14px;
   background: #1f4068;
-  color: #ffffff;
-  padding: 8px 16px;
-  font-weight: 600;
-  border-radius: 8px;
+  color: #fff;
+  border-radius: 6px;
   text-decoration: none;
   font-size: 14px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-}
-.auth-buttons .register-btn {
-  background: #3282b8;
-}
-.auth-buttons a:hover {
-  opacity: 0.88;
+  font-weight: 600;
 }
 
-/* Panel dropdown user */
+.register-btn {
+  background: #3282b8;
+}
+
+.login-btn:hover,
+.register-btn:hover {
+  opacity: 0.9;
+}
+
+/* Dropdown panel user */
 .dropdown-panel {
   display: none;
   position: absolute;
@@ -482,6 +497,7 @@ footer a:hover {
   animation: fadeIn 0.2s ease-in-out;
   z-index: 9999;
 }
+
 .dropdown-panel a {
   display: flex;
   align-items: center;
@@ -494,6 +510,7 @@ footer a:hover {
 .dropdown-panel a:hover {
   background: #f2f6fa;
 }
+
 .user-info {
   display: flex;
   align-items: center;
@@ -507,7 +524,7 @@ footer a:hover {
   margin-left: 10px;
 }
 
-/* Hasil pencarian stabil */
+/* Pencarian hasil */
 #search-results {
   position: absolute;
   top: 60px;
@@ -523,7 +540,7 @@ footer a:hover {
   display: none;
 }
 
-/* Kartu hasil pencarian */
+/* Hasil */
 .result-card {
   padding: 10px;
   border-bottom: 1px solid #eee;
@@ -533,42 +550,26 @@ footer a:hover {
 .result-card:hover {
   background: #f7fafd;
 }
-.result-card:last-child {
-  border-bottom: none;
-}
 .result-title {
   font-weight: bold;
   font-size: 15px;
-  margin-bottom: 4px;
 }
 .result-category {
   font-size: 13px;
   color: #666;
 }
 
-/* Animasi dropdown */
+/* Animasi */
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(-10px); }
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* Responsif mobile */
+/* Responsif HP */
 @media (max-width: 640px) {
-  .account-dropdown {
+  .account-dropdown-row {
     flex-direction: column;
     align-items: flex-end;
     gap: 10px;
   }
-
-  .icon-buttons,
-  .auth-buttons,
-  .avatar-container {
-    align-self: flex-end;
-  }
-
-  .search-inline {
-    width: 100%;
-    justify-content: flex-end;
-  }
 }
-
