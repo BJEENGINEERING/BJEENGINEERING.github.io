@@ -382,23 +382,19 @@ footer a:hover {
 .account-dropdown {
   position: absolute;
   top: 16px;
-  left: 24px;
   right: 24px;
   z-index: 2000;
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  flex-wrap: wrap;
-  gap: 12px;
+  gap: 10px;
+  flex-wrap: nowrap;
 }
 
-/* Pencarian kiri */
+/* Grup pencarian */
 .search-inline {
   display: flex;
   align-items: center;
   gap: 8px;
-  min-width: 280px;
-  flex: 1;
 }
 
 .search-box,
@@ -422,7 +418,7 @@ footer a:hover {
   background: #2c6fa3;
 }
 
-/* Tombol kanan (ikon, avatar, login) */
+/* Tombol kanan (ikon, login, avatar) */
 .icon-buttons,
 .auth-buttons,
 .avatar-container {
@@ -431,7 +427,7 @@ footer a:hover {
   gap: 8px;
 }
 
-/* Ikon pesan, notifikasi, order */
+/* Tombol ikon */
 .icon-button {
   background: none;
   border: none;
@@ -443,7 +439,7 @@ footer a:hover {
   color: #3282b8;
 }
 
-/* Avatar akun */
+/* Avatar user */
 .avatar-container {
   cursor: pointer;
 }
@@ -454,7 +450,7 @@ footer a:hover {
   object-fit: cover;
 }
 
-/* Tombol login/daftar */
+/* Tombol login & daftar */
 .auth-buttons a {
   background: #1f4068;
   color: #ffffff;
@@ -486,7 +482,6 @@ footer a:hover {
   animation: fadeIn 0.2s ease-in-out;
   z-index: 9999;
 }
-
 .dropdown-panel a {
   display: flex;
   align-items: center;
@@ -499,7 +494,6 @@ footer a:hover {
 .dropdown-panel a:hover {
   background: #f2f6fa;
 }
-
 .user-info {
   display: flex;
   align-items: center;
@@ -513,7 +507,7 @@ footer a:hover {
   margin-left: 10px;
 }
 
-/* Prevent layout shift saat pencarian aktif */
+/* Hasil pencarian stabil */
 #search-results {
   position: absolute;
   top: 60px;
@@ -552,17 +546,17 @@ footer a:hover {
   color: #666;
 }
 
-/* Animasi muncul dropdown */
+/* Animasi dropdown */
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(-10px); }
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* Responsif HP */
+/* Responsif mobile */
 @media (max-width: 640px) {
   .account-dropdown {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: flex-end;
     gap: 10px;
   }
 
@@ -570,6 +564,11 @@ footer a:hover {
   .auth-buttons,
   .avatar-container {
     align-self: flex-end;
+  }
+
+  .search-inline {
+    width: 100%;
+    justify-content: flex-end;
   }
 }
 
