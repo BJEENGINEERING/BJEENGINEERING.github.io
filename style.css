@@ -380,299 +380,153 @@ footer a:hover {
 
     /* ✅ Tambahan styling dropdown akun modern */
     .account-dropdown {
-      position: absolute;
-      top: 16px;
-      right: 24px;
-      display: flex;
-      align-items: center;
-      gap: 16px;
-      z-index: 2000;
-    }
+  position: absolute;
+  top: 16px;
+  right: 24px;
+  left: 24px;
+  z-index: 2000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
 
-    .icon-buttons {
-      display: none;
-      gap: 12px;
-      align-items: center;
-    }
-
-    .icon-button {
-      background: none;
-      border: none;
-      font-size: 20px;
-      cursor: pointer;
-      color: #1f4068;
-      position: relative;
-    }
-
-    .icon-button:hover {
-      color: #3282b8;
-    }
-
-    .avatar-container {
-      cursor: pointer;
-      border-radius: 50%;
-      padding: 2px;
-      transition: box-shadow 0.2s ease;
-    }
-
-    .avatar-container:hover {
-      box-shadow: 0 0 0 3px rgba(0,0,0,0.1);
-    }
-
-    .avatar {
-      width: 36px;
-      height: 36px;
-      border-radius: 50%;
-      object-fit: cover;
-    }
-
-    .avatar.small {
-      width: 32px;
-      height: 32px;
-      margin-right: 10px;
-    }
-
-    .dropdown-panel {
-      display: none;
-      position: absolute;
-      top: 56px;
-      right: 0;
-      background: #ffffff;
-      border: 1px solid #e2e8f0;
-      border-radius: 12px;
-      box-shadow: 0 12px 24px rgba(0,0,0,0.12);
-      min-width: 240px;
-      overflow: hidden;
-      animation: fadeIn 0.2s ease;
-    }
-
-    .dropdown-panel a {
-      display: flex;
-      align-items: center;
-      padding: 12px 18px;
-      font-size: 15px;
-      color: #222;
-      text-decoration: none;
-      transition: background 0.2s;
-      gap: 8px;
-    }
-
-    .dropdown-panel a:hover {
-      background-color: #f2f6fa;
-    }
-
-    .user-info {
-      display: flex;
-      align-items: center;
-      padding: 14px 18px;
-      background: #f7fafc;
-      font-size: 14px;
-      border-bottom: 1px solid #e2e8f0;
-    }
-
-    .user-info span {
-      font-size: 13px;
-      color: #555;
-    }
-
-    .auth-buttons {
-      display: flex;
-      gap: 10px;
-    }
-
-    .login-btn,
-    .register-btn {
-      background: #1f4068;
-      color: #ffffff;
-      padding: 8px 16px;
-      font-weight: 600;
-      border-radius: 8px;
-      text-decoration: none;
-      font-size: 14px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-      transition: background 0.3s ease;
-    }
-
-    .login-btn:hover {
-      background: #2c598f;
-    }
-
-    .register-btn {
-      background: #3282b8;
-    }
-
-    .register-btn:hover {
-      background: #4ba2d8;
-    }
-
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-        transform: translateY(-10px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-  </style>
-
-<style>
-  .search-inline {
-    display: flex;
-    align-items: center;
-  }
-
-  .search-box {
-    padding: 6px 12px;
-    border-radius: 6px;
-    border: 1px solid #ccc;
-    font-size: 14px;
-    margin-right: 10px;
-  }
-</style>
-
+/* Search form kiri */
 .search-inline {
   display: flex;
   align-items: center;
-  gap: 6px;
-  margin: 20px auto;
-  justify-content: center;
+  gap: 8px;
+  flex: 1;
+  min-width: 250px;
 }
-.search-box {
-  padding: 6px 12px;
-  border-radius: 6px;
-  border: 1px solid #ccc;
-  font-size: 14px;
-}
+
+.search-box,
 .search-select {
-  padding: 6px 10px;
+  padding: 6px 12px;
   font-size: 14px;
   border-radius: 6px;
   border: 1px solid #ccc;
 }
+
 .search-btn {
   background: #3282b8;
   color: white;
   border: none;
   border-radius: 6px;
-  padding: 6px 10px;
+  padding: 6px 12px;
   font-size: 16px;
   cursor: pointer;
 }
 .search-btn:hover {
   background: #2c6fa3;
 }
-.grid-results {
-  display: block;
-  margin-top: 20px;
-}
 
-.result-card {
-  display: block;
-  padding: 16px;
-  margin-bottom: 12px;
-  background: #fff;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  text-decoration: none;
-  color: #222;
-  transition: background 0.2s ease;
-}
-
-.result-card:hover {
-  background: #f8f8f8;
-}
-
-.result-card {
-  padding: 20px;
-}
-
-.result-content {
-  padding: 14px;
-}
-.result-title {
-  font-weight: bold;
-  font-size: 16px;
-  margin-bottom: 6px;
-}
-.result-category {
-  font-size: 13px;
-  color: #666;
-  margin-bottom: 6px;
-}
-.result-description {
-  font-size: 14px;
-  color: #333;
-}
-
-.search-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  max-width: 1080px;
-  margin: auto;
-  padding-bottom: 20px;
-  position: relative;
-}
-
-#search-results {
-  width: 100%;
-  max-width: 800px;
-  margin-top: 20px;
-  min-height: 120px; /* cegah layout loncat */
-  transition: all 0.3s ease-in-out;
-}
-
-.result-card {
-  display: block;
-  padding: 16px;
-  margin-bottom: 12px;
-  background: #fff;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  text-decoration: none;
-  color: #222;
-  transition: background 0.2s ease;
-}
-
-.result-card:hover {
-  background: #f8f8f8;
-}
-
-.result-title {
-  font-weight: bold;
-  font-size: 17px;
-  margin-bottom: 6px;
-}
-
-.result-category,
-.result-description {
-  font-size: 14px;
-  color: #555;
-}
-
-.account-dropdown-row {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 10px;
-  padding: 10px 20px;
-  max-width: 1080px;
-  margin: 20px auto;
-}
-
-.search-container {
-  flex: 1;
-  min-width: 250px;
-}
-
+/* Bagian kanan */
 .icon-buttons,
-.avatar-container,
-.auth-buttons {
+.auth-buttons,
+.avatar-container {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
 }
+
+/* Ikon pesan, notifikasi, order */
+.icon-button {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  color: #1f4068;
+}
+.icon-button:hover {
+  color: #3282b8;
+}
+
+/* Avatar login */
+.avatar-container {
+  cursor: pointer;
+}
+.avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* Tombol login/daftar */
+.auth-buttons a {
+  background: #1f4068;
+  color: #ffffff;
+  padding: 8px 16px;
+  font-weight: 600;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 14px;
+}
+.auth-buttons .register-btn {
+  background: #3282b8;
+}
+.auth-buttons a:hover {
+  opacity: 0.85;
+}
+
+/* Dropdown panel */
+.dropdown-panel {
+  display: none;
+  position: absolute;
+  top: 60px;
+  right: 24px;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  min-width: 240px;
+  animation: fadeIn 0.2s ease-in-out;
+  z-index: 9999;
+}
+.dropdown-panel a {
+  display: flex;
+  align-items: center;
+  padding: 12px 18px;
+  font-size: 15px;
+  color: #222;
+  text-decoration: none;
+}
+.dropdown-panel a:hover {
+  background: #f2f6fa;
+}
+.user-info {
+  display: flex;
+  align-items: center;
+  padding: 14px 18px;
+  background: #f7fafc;
+  border-bottom: 1px solid #e2e8f0;
+}
+.user-info span {
+  font-size: 13px;
+  color: #555;
+  margin-left: 10px;
+}
+
+/* Animasi fade */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsif HP */
+@media (max-width: 640px) {
+  .account-dropdown {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  .icon-buttons,
+  .auth-buttons,
+  .avatar-container {
+    align-self: flex-end;
+  }
+}
+
 
