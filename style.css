@@ -379,11 +379,11 @@ footer a:hover {
 }
 
     /* ✅ Tambahan styling dropdown akun modern */
-    .account-dropdown {
+.account-dropdown {
   position: absolute;
   top: 16px;
-  right: 24px;
   left: 24px;
+  right: 24px;
   z-index: 2000;
   display: flex;
   justify-content: space-between;
@@ -392,13 +392,13 @@ footer a:hover {
   gap: 12px;
 }
 
-/* Search form kiri */
+/* Pencarian kiri */
 .search-inline {
   display: flex;
   align-items: center;
   gap: 8px;
+  min-width: 280px;
   flex: 1;
-  min-width: 250px;
 }
 
 .search-box,
@@ -422,7 +422,7 @@ footer a:hover {
   background: #2c6fa3;
 }
 
-/* Bagian kanan */
+/* Tombol kanan (ikon, avatar, login) */
 .icon-buttons,
 .auth-buttons,
 .avatar-container {
@@ -443,7 +443,7 @@ footer a:hover {
   color: #3282b8;
 }
 
-/* Avatar login */
+/* Avatar akun */
 .avatar-container {
   cursor: pointer;
 }
@@ -463,15 +463,16 @@ footer a:hover {
   border-radius: 8px;
   text-decoration: none;
   font-size: 14px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
 }
 .auth-buttons .register-btn {
   background: #3282b8;
 }
 .auth-buttons a:hover {
-  opacity: 0.85;
+  opacity: 0.88;
 }
 
-/* Dropdown panel */
+/* Panel dropdown user */
 .dropdown-panel {
   display: none;
   position: absolute;
@@ -485,6 +486,7 @@ footer a:hover {
   animation: fadeIn 0.2s ease-in-out;
   z-index: 9999;
 }
+
 .dropdown-panel a {
   display: flex;
   align-items: center;
@@ -492,10 +494,12 @@ footer a:hover {
   font-size: 15px;
   color: #222;
   text-decoration: none;
+  gap: 10px;
 }
 .dropdown-panel a:hover {
   background: #f2f6fa;
 }
+
 .user-info {
   display: flex;
   align-items: center;
@@ -509,7 +513,46 @@ footer a:hover {
   margin-left: 10px;
 }
 
-/* Animasi fade */
+/* Prevent layout shift saat pencarian aktif */
+#search-results {
+  position: absolute;
+  top: 60px;
+  right: 24px;
+  width: 100%;
+  max-width: 480px;
+  z-index: 1500;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+  padding: 12px;
+  display: none;
+}
+
+/* Kartu hasil pencarian */
+.result-card {
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+.result-card:hover {
+  background: #f7fafd;
+}
+.result-card:last-child {
+  border-bottom: none;
+}
+.result-title {
+  font-weight: bold;
+  font-size: 15px;
+  margin-bottom: 4px;
+}
+.result-category {
+  font-size: 13px;
+  color: #666;
+}
+
+/* Animasi muncul dropdown */
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(-10px); }
   to { opacity: 1; transform: translateY(0); }
@@ -522,11 +565,11 @@ footer a:hover {
     align-items: flex-start;
     gap: 10px;
   }
+
   .icon-buttons,
   .auth-buttons,
   .avatar-container {
     align-self: flex-end;
   }
 }
-
 
