@@ -606,3 +606,48 @@ footer a:hover {
   color: #333;
 }
 
+.search-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 1080px;
+  margin: auto;
+  padding-bottom: 20px;
+  position: relative;
+}
+
+#search-results {
+  width: 100%;
+  max-width: 800px;
+  margin-top: 20px;
+  min-height: 120px; /* cegah layout loncat */
+  transition: all 0.3s ease-in-out;
+}
+
+.result-card {
+  display: block;
+  padding: 16px;
+  margin-bottom: 12px;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  text-decoration: none;
+  color: #222;
+  transition: background 0.2s ease;
+}
+
+.result-card:hover {
+  background: #f8f8f8;
+}
+
+.result-title {
+  font-weight: bold;
+  font-size: 17px;
+  margin-bottom: 6px;
+}
+
+.result-category,
+.result-description {
+  font-size: 14px;
+  color: #555;
+}
