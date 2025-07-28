@@ -618,28 +618,27 @@ function kirimWhatsApp() {
     return await res.json();
   }
 
-  function renderResults(results) {
-    const container = document.getElementById('search-results');
-    container.innerHTML = '';
-    if (results.length === 0) {
-      container.innerHTML = '<p>Tidak ada hasil ditemukan.</p>';
-      return;
-    }
-    results.forEach(item => {
-      const card = document.createElement('a');
-      card.className = 'result-card';
-      card.href = item.url;
-      card.innerHTML = `
-        ${item.image ? `<img src="${item.image}" alt="${item.title}">` : ''}
-        <div class="result-content">
-          <div class="result-title">${item.title}</div>
-          <div class="result-category">Kategori: ${item.category}</div>
-          <div class="result-description">${item.description}</div>
-        </div>
-      `;
-      container.appendChild(card);
-    });
+function renderResults(results) {
+  const container = document.getElementById('search-results');
+  container.innerHTML = '';
+  if (results.length === 0) {
+    container.innerHTML = '<p>Tidak ada hasil ditemukan.</p>';
+    return;
   }
+  results.forEach(item => {
+    const card = document.createElement('a');
+    card.className = 'result-card';
+    card.href = item.url;
+    card.innerHTML = `
+      <div class="result-content">
+        <div class="result-title">${item.title}</div>
+        <div class="result-category">Kategori: ${item.category}</div>
+        <div class="result-description">${item.description}</div>
+      </div>
+    `;
+    container.appendChild(card);
+  });
+}
 
   async function initLiveSearch() {
     const data = await fetchIndex();
