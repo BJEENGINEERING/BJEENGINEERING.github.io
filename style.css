@@ -580,11 +580,10 @@ footer a:hover {
 .result-card:hover {
   box-shadow: 0 4px 16px rgba(0,0,0,0.1);
 }
-.result-card img {
-  width: 100%;
-  height: 160px;
-  object-fit: cover;
+.result-card {
+  padding: 20px;
 }
+
 .result-content {
   padding: 14px;
 }
