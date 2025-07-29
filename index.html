@@ -60,23 +60,24 @@ s0.parentNode.insertBefore(s1,s0);
 </script>
 
 <!-- ✅ Dropdown Akun Modern + Tombol Aksi + Search -->
- <div class="icon-buttons" id="actionButtons" style="display: none;">
-    <button class="icon-button" title="Pesan"><span>📩</span></button>
-    <button class="icon-button" title="Notifikasi"><span>🔔</span></button>
-    <button class="icon-button" title="Order Saya"><span>📝</span></button>
+<div class="account-dropdown-row">
+  <div class="icon-buttons" id="actionButtons" style="display: none;">
+    <button class="icon-button" title="Pesan">📩</button>
+    <button class="icon-button" title="Notifikasi">🔔</button>
+    <button class="icon-button" title="Order Saya">📝</button>
   </div>
 
   <div class="avatar-container" id="userMenu" style="display: none;" onclick="toggleDropdown()">
     <img src="images/user-icon.png" alt="User Avatar" class="avatar">
   </div>
 
-  <div id="authButtons" class="auth-buttons" style="display: flex;">
+  <div id="authButtons" class="auth-buttons" style="display: none;">
     <a href="login.html" class="login-btn">Login</a>
     <a href="register.html" class="register-btn">Daftar</a>
   </div>
 </div>
 
-<!-- PANEL DROPDOWN USER -->
+<!-- Tetap sisakan dropdownContent terpisah -->
 <div class="dropdown-panel" id="dropdownContent">
   <div class="user-info">
     <img src="images/user-icon.png" class="avatar small" alt="User Avatar">
