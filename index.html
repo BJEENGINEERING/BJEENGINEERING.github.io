@@ -60,23 +60,7 @@ s0.parentNode.insertBefore(s1,s0);
 </script>
 
 <!-- ✅ Dropdown Akun Modern + Tombol Aksi + Search -->
-<div class="account-dropdown-row">
-  <div class="search-container">
-    <form id="live-search-form" class="search-inline">
-      <input type="text" id="search-input" placeholder="Cari layanan atau galeri..." class="search-box">
-      <select id="category-filter" class="search-select">
-        <option value="all">Semua</option>
-        <option value="bubut">Bubut</option>
-        <option value="milling">Milling</option>
-        <option value="slotting">Slotting</option>
-        <option value="fabrikasi">Fabrikasi</option>
-      </select>
-      <button type="submit" class="search-btn" title="Cari">🔍</button>
-    </form>
-    <div id="search-results" class="grid-results"></div>
-  </div>
-
-  <div class="icon-buttons" id="actionButtons" style="display: none;">
+ <div class="icon-buttons" id="actionButtons" style="display: none;">
     <button class="icon-button" title="Pesan"><span>📩</span></button>
     <button class="icon-button" title="Notifikasi"><span>🔔</span></button>
     <button class="icon-button" title="Order Saya"><span>📝</span></button>
@@ -86,13 +70,13 @@ s0.parentNode.insertBefore(s1,s0);
     <img src="images/user-icon.png" alt="User Avatar" class="avatar">
   </div>
 
-  <div id="authButtons" class="auth-buttons" style="display: none;">
+  <div id="authButtons" class="auth-buttons" style="display: flex;">
     <a href="login.html" class="login-btn">Login</a>
     <a href="register.html" class="register-btn">Daftar</a>
   </div>
 </div>
 
-<!-- Tetap sisakan dropdownContent terpisah -->
+<!-- PANEL DROPDOWN USER -->
 <div class="dropdown-panel" id="dropdownContent">
   <div class="user-info">
     <img src="images/user-icon.png" class="avatar small" alt="User Avatar">
@@ -107,21 +91,15 @@ s0.parentNode.insertBefore(s1,s0);
   <a href="#" onclick="logout()"><i>🚪</i> Logout</a>
 </div>
 
-<!-- BAGIAN ATAS HERO + HEADER -->
+<!-- HEADER DAN HERO -->
 <section class="hero-section">
-  <div class="account-dropdown">
-
-  </div>
-
   <header data-aos="fade-down" class="banner-content">
-  <h1>BJE ENGINEERING</h1>
-  <p><span id="typed-text"></span></p>
-</header>
+    <h1>BJE ENGINEERING</h1>
+    <p><span id="typed-text"></span></p>
+  </header>
+</section>
 
-<!-- HASIL PENCARIAN -->
-<div id="search-results" class="grid-results"></div>
-
-<!-- NAVIGATION -->
+<!-- NAVIGASI -->
 <nav id="navbar">
   <a href="#tentang">Tentang Kami</a>
   <a href="#galeri">Galeri</a>
@@ -129,7 +107,6 @@ s0.parentNode.insertBefore(s1,s0);
   <a href="#kontak">Kontak</a>
   <a href="jasa-bubut-cikarang.html">Layanan</a>
 </nav>
-
 
 <div class="container">
  <div id="notif" class="animate__animated animate__bounceIn" style="display:none; background:#d4edda; padding:15px;color:#155724; border:1px solid #c3e6cb; border-radius:5px; margin-bottom:20px;">
