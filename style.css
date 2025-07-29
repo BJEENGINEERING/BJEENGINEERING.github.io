@@ -383,10 +383,18 @@ footer a:hover {
   position: absolute;
   top: 16px;
   right: 24px;
+  width: 100%;
   display: flex;
-  gap: 8px;
+  justify-content: flex-end;
   align-items: center;
+  gap: 8px;
   z-index: 2000;
+  padding-right: 24px;
+  pointer-events: none; /* agar tidak menutupi tombol lain jika kosong */
+}
+
+.top-bar > * {
+  pointer-events: auto; /* tetap bisa diklik */
 }
 
 /* Tombol Ikon */
@@ -418,12 +426,6 @@ footer a:hover {
 }
 
 /* Tombol login / daftar */
-.auth-buttons {
-  display: flex;
-  gap: 8px;
-}
-
-/* Tombol Login & Daftar */
 .login-btn,
 .register-btn {
   padding: 6px 12px;
@@ -441,7 +443,6 @@ footer a:hover {
 .register-btn:hover {
   opacity: 0.9;
 }
-
 
 /* Dropdown panel user */
 .dropdown-panel {
@@ -490,33 +491,23 @@ footer a:hover {
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* Responsif HP */
+/* ✅ RESPONSIF HP */
 @media (max-width: 640px) {
-  .account-dropdown-row {
-    flex-direction: column;
-    align-items: flex-end;
-    gap: 10px;
+  .top-bar {
+    flex-wrap: wrap;
+    gap: 6px;
+    top: 12px;
+    right: 12px;
+    padding-right: 12px;
+  }
+
+  .login-btn, .register-btn {
+    padding: 6px 10px;
+    font-size: 13px;
+  }
+
+  .icon-button {
+    font-size: 16px;
   }
 }
 
-@media (max-width: 640px) {
-  .account-dropdown-row {
-    flex-direction: column;
-    align-items: stretch;
-    gap: 8px;
-  }
-
-  .search-inline {
-    justify-content: center;
-  }
-
-  .auth-buttons {
-    justify-content: flex-end;
-    width: 100%;
-  }
-
-  .icon-buttons {
-    justify-content: flex-end;
-    width: 100%;
-  }
-}
