@@ -514,41 +514,6 @@ footer a:hover {
   margin-left: 10px;
 }
 
-/* Pencarian hasil */
-#search-results {
-  position: relative;
-  width: 100%;
-  max-width: 800px;
-  margin: 0 auto;
-  background: white;
-  border: 1px solid #ddd;
-  border-radius: 10px;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.12);
-  padding: 12px;
-  margin-top: 12px;
-  display: none;
-  z-index: 10;
-}
-
-/* Hasil */
-.result-card {
-  padding: 10px;
-  border-bottom: 1px solid #eee;
-  cursor: pointer;
-  transition: background 0.2s ease;
-}
-.result-card:hover {
-  background: #f7fafd;
-}
-.result-title {
-  font-weight: bold;
-  font-size: 15px;
-}
-.result-category {
-  font-size: 13px;
-  color: #666;
-}
-
 /* Animasi */
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(-10px); }
