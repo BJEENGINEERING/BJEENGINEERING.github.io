@@ -380,14 +380,13 @@ footer a:hover {
 
     /* ✅ Tambahan styling dropdown akun modern */
 .account-dropdown-row {
-  position: absolute;
-  top: 16px;
-  right: 24px;
   display: flex;
   align-items: center;
-  gap: 12px;
-  flex-wrap: nowrap;
-  z-index: 2000;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+  max-width: 100%;
+  padding: 10px 20px;
 }
 
 /* Kontainer pencarian */
@@ -397,31 +396,22 @@ footer a:hover {
 }
 
 .search-inline {
-  display: flex;
-  align-items: center;
-  gap: 8px;
+  gap: 6px;
+  flex-wrap: wrap; /* biar responsive */
 }
 
 .search-box,
 .search-select {
-  padding: 6px 10px;
-  font-size: 14px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
+  padding: 4px 8px;
+  font-size: 13px;
+  max-width: 140px;
 }
 
 .search-btn {
-  background: #3282b8;
-  color: #fff;
-  border: none;
-  border-radius: 6px;
-  padding: 6px 12px;
-  font-size: 16px;
-  cursor: pointer;
+  padding: 4px 10px;
+  font-size: 14px;
 }
-.search-btn:hover {
-  background: #2c6fa3;
-}
+
 
 /* Tombol ikon */
 .icon-buttons {
@@ -571,5 +561,27 @@ footer a:hover {
     flex-direction: column;
     align-items: flex-end;
     gap: 10px;
+  }
+}
+
+@media (max-width: 640px) {
+  .account-dropdown-row {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+  }
+
+  .search-inline {
+    justify-content: center;
+  }
+
+  .auth-buttons {
+    justify-content: flex-end;
+    width: 100%;
+  }
+
+  .icon-buttons {
+    justify-content: flex-end;
+    width: 100%;
   }
 }
