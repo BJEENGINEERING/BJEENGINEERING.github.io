@@ -110,15 +110,16 @@ s0.parentNode.insertBefore(s1,s0);
 <!-- BAGIAN ATAS HERO + HEADER -->
 <section class="hero-section">
   <div class="account-dropdown">
-    <!-- Search dan tombol login/daftar kamu di sini -->
-    <!-- (sisipkan div pencarian dan login seperti sebelumnya) -->
+
   </div>
 
   <header data-aos="fade-down" class="banner-content">
-    <h1>BJE ENGINEERING</h1>
-    <p><span id="typed-text"></span></p>
-  </header>
-</section>
+  <h1>BJE ENGINEERING</h1>
+  <p><span id="typed-text"></span></p>
+</header>
+
+<!-- HASIL PENCARIAN -->
+<div id="search-results" class="grid-results"></div>
 
 <!-- NAVIGATION -->
 <nav id="navbar">
@@ -128,6 +129,7 @@ s0.parentNode.insertBefore(s1,s0);
   <a href="#kontak">Kontak</a>
   <a href="jasa-bubut-cikarang.html">Layanan</a>
 </nav>
+
 
 <div class="container">
  <div id="notif" class="animate__animated animate__bounceIn" style="display:none; background:#d4edda; padding:15px;color:#155724; border:1px solid #c3e6cb; border-radius:5px; margin-bottom:20px;">
@@ -627,27 +629,31 @@ function kirimWhatsApp() {
     return await res.json();
   }
 
-function renderResults(results) {
-  const container = document.getElementById('search-results');
-  container.innerHTML = '';
-  if (results.length === 0) {
-    container.innerHTML = '<p>Tidak ada hasil ditemukan.</p>';
-    return;
+  function renderResults(results) {
+    const container = document.getElementById('search-results');
+    container.innerHTML = '';
+    if (results.length === 0) {
+      container.innerHTML = '<p>Tidak ada hasil ditemukan.</p>';
+      container.style.display = 'block';
+      return;
+    }
+
+    results.forEach(item => {
+      const card = document.createElement('a');
+      card.className = 'result-card';
+      card.href = item.url;
+      card.innerHTML = `
+        <div class="result-content">
+          <div class="result-title">${item.title}</div>
+          <div class="result-category">Kategori: ${item.category}</div>
+          <div class="result-description">${item.description}</div>
+        </div>
+      `;
+      container.appendChild(card);
+    });
+
+    container.style.display = 'block';
   }
-  results.forEach(item => {
-    const card = document.createElement('a');
-    card.className = 'result-card';
-    card.href = item.url;
-    card.innerHTML = `
-      <div class="result-content">
-        <div class="result-title">${item.title}</div>
-        <div class="result-category">Kategori: ${item.category}</div>
-        <div class="result-description">${item.description}</div>
-      </div>
-    `;
-    container.appendChild(card);
-  });
-}
 
   async function initLiveSearch() {
     const data = await fetchIndex();
@@ -679,7 +685,6 @@ function renderResults(results) {
 
   initLiveSearch();
 </script>
-
 
 </body>
 </html>
