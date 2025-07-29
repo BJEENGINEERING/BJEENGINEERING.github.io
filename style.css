@@ -378,57 +378,27 @@ footer a:hover {
   background-color: #3282b8;
 }
 
-    /* ✅ Tambahan styling dropdown akun modern */
-.account-dropdown-row {
+/* ✅ Bar Atas Tombol Login */
+.top-bar {
+  position: absolute;
+  top: 16px;
+  right: 24px;
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 10px;
-  max-width: 100%;
-  padding: 10px 20px;
-}
-
-/* Kontainer pencarian */
-.search-container {
-  display: flex;
-  align-items: center;
-}
-
-.search-inline {
-  gap: 6px;
-  flex-wrap: wrap; /* biar responsive */
-}
-
-.search-box,
-.search-select {
-  padding: 4px 8px;
-  font-size: 13px;
-  max-width: 140px;
-}
-
-.search-btn {
-  padding: 4px 10px;
-  font-size: 14px;
-}
-
-
-/* Tombol ikon */
-.icon-buttons {
-  display: flex;
-  align-items: center;
   gap: 8px;
+  align-items: center;
+  z-index: 2000;
 }
 
+/* Tombol Ikon */
 .icon-button {
   background: none;
   border: none;
-  font-size: 20px;
+  font-size: 18px;
   cursor: pointer;
-  color: #1f4068;
+  color: #ffffff;
 }
 .icon-button:hover {
-  color: #3282b8;
+  color: #47b5ff;
 }
 
 /* Avatar user */
@@ -453,25 +423,25 @@ footer a:hover {
   gap: 8px;
 }
 
+/* Tombol Login & Daftar */
 .login-btn,
 .register-btn {
-  padding: 6px 14px;
-  background: #1f4068;
-  color: #fff;
+  padding: 6px 12px;
+  font-size: 14px;
   border-radius: 6px;
   text-decoration: none;
-  font-size: 14px;
   font-weight: 600;
+  color: #ffffff;
+  background-color: #1f4068;
 }
-
 .register-btn {
-  background: #3282b8;
+  background-color: #3282b8;
 }
-
 .login-btn:hover,
 .register-btn:hover {
   opacity: 0.9;
 }
+
 
 /* Dropdown panel user */
 .dropdown-panel {
