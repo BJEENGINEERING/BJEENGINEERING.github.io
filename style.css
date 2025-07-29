@@ -378,23 +378,15 @@ footer a:hover {
   background-color: #3282b8;
 }
 
-/* ✅ Bar Atas Tombol Login */
+/* 🔵 Top Bar Kanan Atas */
 .top-bar {
   position: absolute;
-  top: 16px;
+  top: 20px;
   right: 24px;
-  width: 100%;
   display: flex;
-  justify-content: flex-end;
+  gap: 12px;
   align-items: center;
-  gap: 8px;
-  z-index: 2000;
-  padding-right: 24px;
-  pointer-events: none; /* agar tidak menutupi tombol lain jika kosong */
-}
-
-.top-bar > * {
-  pointer-events: auto; /* tetap bisa diklik */
+  z-index: 9999;
 }
 
 /* Tombol Ikon */
@@ -409,7 +401,7 @@ footer a:hover {
   color: #47b5ff;
 }
 
-/* Avatar user */
+/* Avatar */
 .avatar-container {
   cursor: pointer;
 }
@@ -425,16 +417,21 @@ footer a:hover {
   margin-right: 10px;
 }
 
-/* Tombol login / daftar */
+/* Tombol Login / Daftar */
+.auth-buttons {
+  display: flex;
+  gap: 10px;
+}
 .login-btn,
 .register-btn {
-  padding: 6px 12px;
+  padding: 6px 14px;
   font-size: 14px;
   border-radius: 6px;
   text-decoration: none;
   font-weight: 600;
-  color: #ffffff;
+  color: #fff;
   background-color: #1f4068;
+  transition: opacity 0.2s ease;
 }
 .register-btn {
   background-color: #3282b8;
@@ -444,7 +441,7 @@ footer a:hover {
   opacity: 0.9;
 }
 
-/* Dropdown panel user */
+/* Panel Dropdown */
 .dropdown-panel {
   display: none;
   position: absolute;
@@ -458,7 +455,6 @@ footer a:hover {
   animation: fadeIn 0.2s ease-in-out;
   z-index: 9999;
 }
-
 .dropdown-panel a {
   display: flex;
   align-items: center;
@@ -471,7 +467,6 @@ footer a:hover {
 .dropdown-panel a:hover {
   background: #f2f6fa;
 }
-
 .user-info {
   display: flex;
   align-items: center;
@@ -485,7 +480,7 @@ footer a:hover {
   margin-left: 10px;
 }
 
-/* Animasi */
+/* Fade In */
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(-10px); }
   to { opacity: 1; transform: translateY(0); }
