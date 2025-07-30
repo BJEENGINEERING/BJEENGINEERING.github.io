@@ -520,7 +520,7 @@ footer a:hover {
 
   @media (max-width: 320px) {
     .logo-top-left {
-      top: 2px;
+      top: 4px;
       left: 8px;
     }
     .logo-top-left img {
@@ -530,7 +530,7 @@ footer a:hover {
 
 @media (max-width: 320px) {
   .logo-top-left img {
-    height: 52px; /* sebelumnya 32px */
+    height: 32px; /* sebelumnya 32px */
   }
 }
 
