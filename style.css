@@ -509,7 +509,7 @@ footer a:hover {
 .logo-top-left {
     position: absolute;
     top: 2px;
-    left: 24px;
+    left: 18px;
     z-index: 1000;
   }
 
@@ -536,7 +536,7 @@ footer a:hover {
 
 /* ✅ Logo Kiri Atas */
 .logo-top {
-  height: 32px;
+  height: 24px;
   margin-right: auto;
   object-fit: contain;
   filter: brightness(0) invert(1); /* Biar putih jika logo PNG */
