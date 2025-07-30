@@ -506,3 +506,24 @@ footer a:hover {
   }
 }
 
+.logo-top-left {
+    position: absolute;
+    top: 16px;
+    left: 24px;
+    z-index: 1000;
+  }
+
+  .logo-top-left img {
+    height: 40px;
+    width: auto;
+  }
+
+  @media (max-width: 640px) {
+    .logo-top-left {
+      top: 12px;
+      left: 16px;
+    }
+    .logo-top-left img {
+      height: 32px;
+    }
+  }
