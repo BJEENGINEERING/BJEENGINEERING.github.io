@@ -514,11 +514,11 @@ footer a:hover {
   }
 
   .logo-top-left img {
-    height: 32px;
+    height: 42px;
     width: auto;
   }
 
-  @media (max-width: 120px) {
+  @media (max-width: 100px) {
     .logo-top-left {
       top: 4px;
       left: 2px;
@@ -528,7 +528,7 @@ footer a:hover {
     }
   }
 
-@media (max-width: 120px) {
+@media (max-width: 100px) {
   .logo-top-left img {
     height: 18px; /* sebelumnya 32px */
   }
@@ -536,7 +536,7 @@ footer a:hover {
 
 /* ✅ Logo Kiri Atas */
 .logo-top {
-  height: 24px;
+  height: 18px;
   margin-right: auto;
   object-fit: contain;
   filter: brightness(0) invert(1); /* Biar putih jika logo PNG */
