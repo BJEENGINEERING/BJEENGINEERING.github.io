@@ -533,3 +533,12 @@ footer a:hover {
     height: 72px; /* sebelumnya 32px */
   }
 }
+
+/* ✅ Logo Kiri Atas */
+.logo-top {
+  height: 32px;
+  margin-right: auto;
+  object-fit: contain;
+  filter: brightness(0) invert(1); /* Biar putih jika logo PNG */
+}
+
