@@ -381,8 +381,8 @@ footer a:hover {
 /* 🔵 Top Bar Kanan Atas */
 .top-bar {
   position: absolute;
-  top: 20px;
-  right: 20px;
+  top: 18px;
+  right: 18px;
   display: flex;
   gap: 12px;
   align-items: center;
@@ -445,8 +445,8 @@ footer a:hover {
 .dropdown-panel {
   display: none;
   position: absolute;
-  top: 60px;
-  right: 20px;
+  top: 52px;
+  right: 18px;
   background: white;
   border: 1px solid #ddd;
   border-radius: 12px;
