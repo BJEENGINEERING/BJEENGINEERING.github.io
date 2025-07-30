@@ -519,7 +519,7 @@ footer a:hover {
   }
 
   /* 🔧 Responsive logo untuk layar kecil (HP) */
-@media (max-width: 640px) {
+@media (max-width: 512px) {
   .logo-top-left {
     top: 6px;
     left: 6px;
