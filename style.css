@@ -506,3 +506,20 @@ footer a:hover {
   }
 }
 
+.banner-content {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Tengah secara horizontal */
+  gap: 12px;
+  flex-wrap: wrap; /* Agar mobile tidak rusak */
+  text-align: center;
+  padding: 40px 20px;
+  flex-direction: row;
+}
+
+.banner-content img.logo-group {
+  height: 48px;
+  width: auto;
+  object-fit: contain;
+}
+
