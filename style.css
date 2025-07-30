@@ -518,7 +518,7 @@ footer a:hover {
     width: auto;
   }
 
-  @media (max-width: 240px) {
+  @media (max-width: 180px) {
     .logo-top-left {
       top: 4px;
       left: 2px;
@@ -528,9 +528,9 @@ footer a:hover {
     }
   }
 
-@media (max-width: 240px) {
+@media (max-width: 180px) {
   .logo-top-left img {
-    height: 24px; /* sebelumnya 32px */
+    height: 18px; /* sebelumnya 32px */
   }
 }
 
