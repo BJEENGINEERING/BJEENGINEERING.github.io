@@ -524,13 +524,13 @@ footer a:hover {
       left: 8px;
     }
     .logo-top-left img {
-      height: 32px;
+      height: 18px;
     }
   }
 
 @media (max-width: 640px) {
   .logo-top-left img {
-    height: 72px; /* sebelumnya 32px */
+    height: 52px; /* sebelumnya 32px */
   }
 }
 
