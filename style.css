@@ -381,8 +381,8 @@ footer a:hover {
 /* 🔵 Top Bar Kanan Atas */
 .top-bar {
   position: absolute;
-  top: 18px;
-  right: 18px;
+  top: 16px;
+  right: 16px;
   display: flex;
   gap: 12px;
   align-items: center;
@@ -424,11 +424,11 @@ footer a:hover {
 }
 .login-btn,
 .register-btn {
-  padding: 6px 14px;
+  padding: 5px 12px;
   font-size: 14px;
   border-radius: 6px;
   text-decoration: none;
-  font-weight: 512;
+  font-weight: 500;
   color: #fff;
   background-color: #1f4068;
   transition: opacity 0.2s ease;
@@ -441,7 +441,7 @@ footer a:hover {
   opacity: 0.9;
 }
 
-/* Panel Dropdown */
+/* Dropdown */
 .dropdown-panel {
   display: none;
   position: absolute;
@@ -480,29 +480,27 @@ footer a:hover {
   margin-left: 10px;
 }
 
-/* Fade In */
+/* 🔽 Animasi */
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(-10px); }
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* ✅ RESPONSIF HP */
+/* ✅ RESPONSIF KHUSUS HP */
 @media (max-width: 460px) {
   .top-bar {
-    flex-wrap: wrap;
+    top: 8px;
+    right: 10px;
     gap: 6px;
-    top: 10px;
-    right: 8px;
-    padding-right: 8px;
   }
 
   .login-btn, .register-btn {
-    padding: 6px 10px;
-    font-size: 13px;
+    padding: 5px 10px;
+    font-size: 12.5px;
   }
 
   .icon-button {
-    font-size: 14px;
+    font-size: 13px;
   }
 }
 
