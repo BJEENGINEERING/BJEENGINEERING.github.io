@@ -522,16 +522,16 @@ footer a:hover {
 @media (max-width: 640px) {
   .logo-top-left {
     top: 6px;
-    left: 10px;
+    left: 8px;
   }
   .logo-top-left img {
-    height: 28px; /* Sesuaikan biar nggak kebesaran */
+    height: 26px; /* Sesuaikan biar nggak kebesaran */
   }
 }
 
 @media (min-width: 1024px) {
   .logo-top-left img {
-    height: 42px;
+    height: 40px;
   }
 }
 
