@@ -510,7 +510,7 @@ footer a:hover {
     position: absolute;
     top: 16px;
     left: 24px;
-    z-index: 2000;
+    z-index: 1000;
   }
 
   .logo-top-left img {
