@@ -492,8 +492,8 @@ footer a:hover {
     flex-wrap: wrap;
     gap: 6px;
     top: 12px;
-    right: 12px;
-    padding-right: 12px;
+    right: 8px;
+    padding-right: 8px;
   }
 
   .login-btn, .register-btn {
