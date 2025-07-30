@@ -487,7 +487,7 @@ footer a:hover {
 }
 
 /* ✅ RESPONSIF HP */
-@media (max-width: 512px) {
+@media (max-width: 480px) {
   .top-bar {
     flex-wrap: wrap;
     gap: 6px;
