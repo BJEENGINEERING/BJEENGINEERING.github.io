@@ -518,19 +518,20 @@ footer a:hover {
     width: auto;
   }
 
-  @media (max-width: 100px) {
-    .logo-top-left {
-      top: 4px;
-      left: 2px;
-    }
-    .logo-top-left img {
-      height: 18px;
-    }
+  /* 🔧 Responsive logo untuk layar kecil (HP) */
+@media (max-width: 640px) {
+  .logo-top-left {
+    top: 6px;
+    left: 12px;
   }
-
-@media (max-width: 100px) {
   .logo-top-left img {
-    height: 18px; /* sebelumnya 32px */
+    height: 32px; /* Sesuaikan biar nggak kebesaran */
+  }
+}
+
+@media (min-width: 1024px) {
+  .logo-top-left img {
+    height: 48px;
   }
 }
 
