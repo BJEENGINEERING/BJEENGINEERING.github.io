@@ -527,3 +527,9 @@ footer a:hover {
       height: 32px;
     }
   }
+
+@media (max-width: 640px) {
+  .logo-top-left img {
+    height: 48px; /* sebelumnya 32px */
+  }
+}
