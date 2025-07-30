@@ -1,146 +1,94 @@
-<!DOCTYPE html><html>
+<!DOCTYPE html>
+<html lang="id">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>BJE Engineering | Jasa Bubut, Milling, Slotting di Cikarang</title>
   <link rel="stylesheet" href="style.css" />
   <link rel="icon" href="images/logo.jpg" type="image/jpeg">
-  <style>html { scroll-behavior: smooth; }</style>
-
-  <!-- SEO META TAG -->
+  <style>
+    html { scroll-behavior: smooth; }
+    .banner-content {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      text-align: center;
+      gap: 16px;
+    }
+    .logo-header {
+      height: 48px;
+      margin-right: 8px;
+      vertical-align: middle;
+    }
+  </style>
+  <!-- SEO & OG Tags (dipersingkat) -->
   <meta name="description" content="Spesialis bubut, milling, slotting, dan fabrikasi industri di Cikarang sejak 2011.">
   <meta name="keywords" content="bubut Cikarang, milling Cikarang, jasa slotting, fabrikasi industri, BJE Engineering">
   <meta name="author" content="BJE Engineering">
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="BJE Engineering | Bengkel Bubut Cikarang" />
-  <meta property="og:description" content="Spesialis bubut, milling, slotting dan fabrikasi industri sejak 2011." />
-  <meta property="og:image" content="https://bjeengineering.github.io/images/logo.jpg" />
-  <meta property="og:url" content="https://bjeengineering.github.io/" />
-  <meta property="og:type" content="website" />
-
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="BJE Engineering">
-  <meta name="twitter:description" content="Spesialis bubut, milling, slotting dan fabrikasi industri sejak 2011.">
-  <meta name="twitter:image" content="https://bjeengineering.github.io/images/logo.jpg">
-
-  <meta name="google-site-verification" content="FQG-vfNG0KSOUC5MPX1YazIX4PUioZaVuJT2VyhyG3Q" />
-
-	<!-- ANIMATE.CSS untuk animasi masuk -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
-
-<!-- AOS (Animate on Scroll) -->
-<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-
-<!-- GLightbox CSS -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
-
-	<!-- Typed.js -->
-  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-
 </head>
 <body>
-
-	<div id="preloader">
-  <div class="loader"></div>
-</div>
-
-	<!-- ✅ Live Chat Tawk.to -->
-<script type="text/javascript">
-var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-(function(){
-var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-s1.async=true;
-s1.src='https://embed.tawk.to/686fef2b784e0c1911e02538/1ivqjshbm';
-s1.charset='UTF-8';
-s1.setAttribute('crossorigin','*');
-s0.parentNode.insertBefore(s1,s0);
-})();
-</script>
-
-<!-- ✅ Top Bar Akun Modern di Pojok Kanan -->
-<div class="top-bar">
-  <!-- Tombol Aksi Jika Login -->
-  <div class="icon-buttons" id="actionButtons" style="display: none;">
-    <button class="icon-button" title="Pesan">📩</button>
-    <button class="icon-button" title="Notifikasi">🔔</button>
-    <button class="icon-button" title="Order Saya">📝</button>
-  </div>
-
-  <!-- Avatar User Jika Login -->
-  <div class="avatar-container" id="userMenu" style="display: none;" onclick="toggleDropdown()">
-    <img src="images/user-icon.png" alt="User Avatar" class="avatar">
-  </div>
-
-  <!-- Tombol Login/Daftar Jika Belum Login -->
-  <div id="authButtons" class="auth-buttons">
-    <a href="login.html" class="login-btn">Login</a>
-    <a href="register.html" class="register-btn">Daftar</a>
-  </div>
-</div>
-
-<!-- Panel Dropdown User -->
-<div class="dropdown-panel" id="dropdownContent">
-  <div class="user-info">
-    <img src="images/user-icon.png" class="avatar small" alt="User Avatar">
-    <div>
-      <strong>BJE User</strong><br>
-      <span>user@example.com</span>
+  <!-- ✅ Top Bar Login Kanan Atas -->
+  <div class="top-bar">
+    <div class="icon-buttons" id="actionButtons" style="display: none;">
+      <button class="icon-button" title="Pesan">📩</button>
+      <button class="icon-button" title="Notifikasi">🔔</button>
+      <button class="icon-button" title="Order Saya">📝</button>
+    </div>
+    <div class="avatar-container" id="userMenu" style="display: none;" onclick="toggleDropdown()">
+      <img src="images/user-icon.png" alt="User Avatar" class="avatar">
+    </div>
+    <div id="authButtons" class="auth-buttons">
+      <a href="login.html" class="login-btn">Login</a>
+      <a href="register.html" class="register-btn">Daftar</a>
     </div>
   </div>
-  <a href="#"><i>📂</i> Dashboard</a>
-  <a href="#"><i>⚙️</i> Pengaturan</a>
-  <a href="#"><i>📦</i> Pesanan</a>
-  <a href="#" onclick="logout()"><i>🚪</i> Logout</a>
-</div>
 
-<!-- HEADER DAN HERO -->
-<section class="hero-section">
-  <header data-aos="fade-down" class="banner-content">
-    <h1>BJE ENGINEERING</h1>
-    <p><span id="typed-text"></span></p>
-  </header>
-</section>
+  <div class="dropdown-panel" id="dropdownContent">
+    <div class="user-info">
+      <img src="images/user-icon.png" class="avatar small" alt="User Avatar">
+      <div>
+        <strong>BJE User</strong><br>
+        <span>user@example.com</span>
+      </div>
+    </div>
+    <a href="#"><i>📂</i> Dashboard</a>
+    <a href="#"><i>⚙️</i> Pengaturan</a>
+    <a href="#"><i>📦</i> Pesanan</a>
+    <a href="#" onclick="logout()"><i>🚪</i> Logout</a>
+  </div>
 
-<!-- NAVIGASI -->
-<nav id="navbar">
-  <a href="#tentang">Tentang Kami</a>
-  <a href="#galeri">Galeri</a>
-  <a href="#testimoni">Testimoni</a>
-  <a href="#kontak">Kontak</a>
-  <a href="jasa-bubut-cikarang.html">Layanan</a>
-</nav>
-
-<div class="container">
- <div id="notif" class="animate__animated animate__bounceIn" style="display:none; background:#d4edda; padding:15px;color:#155724; border:1px solid #c3e6cb; border-radius:5px; margin-bottom:20px;">
-      ✅ Formulir berhasil dikirim! Kami akan segera menghubungi Anda.
-    </div>	
-	
-	<!-- ✅ Tentang -->
-  <section id="tentang" data-aos="fade-up">
-    <h2>Tentang Kami</h2>
-    <p><strong>BJE Engineering</strong> adalah bengkel <a href="jasa-bubut-cikarang.html">bubut</a> dan <a href="jasa-milling-cikarang.html">machining</a> berlokasi di Cikarang, melayani pembuatan dan perbaikan <a href="fabrikasi-komponen-industri.html">komponen industri</a> sejak 2011.</p>
-<div class="highlight-box">
-  <p><strong>BJE Engineering</strong> adalah unit teknik dan manufaktur dari <strong>BJE Group</strong>, yang bergerak di bidang desain teknik, machining, 3D printing, dan solusi industri.</p>
-  <p>Kami akan segera meluncurkan divisi lain seperti: <strong>BJE Interior</strong> (desain dan produksi furniture), <strong>BJE Robotics</strong> (otomatisasi & AI), dan <strong>BJE Studio</strong> (branding & kreatif digital).</p>
-</div>
-
-
-    <ul>
-      <li>✅ Dikerjakan oleh tenaga berpengalaman</li>
-      <li>✅ Mesin presisi dan standar industri</li>
-      <li>✅ Pelayanan cepat dan profesional</li>
-    </ul>
+  <!-- ✅ HERO + HEADER -->
+  <section class="hero-section">
+    <header data-aos="fade-down" class="banner-content">
+      <img src="images/logo group.png" alt="Logo BJE Group" class="logo-header" />
+      <div>
+        <h1>BJE ENGINEERING</h1>
+        <p><span id="typed-text"></span></p>
+      </div>
+    </header>
   </section>
 
-  <!-- ✅ Galeri -->
-  <section id="galeri" data-aos="fade-up" data-aos-delay="100">
-   <h2>Galeri Hasil Kerja</h2>
-	<p style="text-align:center; max-width:700px; margin:10px auto 30px;">
-  	Kami mengerjakan berbagai proyek <strong>bubut, milling, slotting</strong>, dan <strong>fabrikasi komponen industri</strong> secara presisi.
- 	 Berikut dokumentasi beberapa pekerjaan yang telah kami selesaikan.
-	</p>
+  <!-- ✅ NAVIGASI -->
+  <nav id="navbar">
+    <a href="#tentang">Tentang Kami</a>
+    <a href="#galeri">Galeri</a>
+    <a href="#testimoni">Testimoni</a>
+    <a href="#kontak">Kontak</a>
+    <a href="jasa-bubut-cikarang.html">Layanan</a>
+  </nav>
+
+  <!-- ✅ Bagian Konten Selanjutnya -->
+  <div class="container">
+    <section id="tentang">
+      <h2>Tentang Kami</h2>
+      <p><strong>BJE Engineering</strong> adalah bengkel <a href="#">bubut</a> dan <a href="#">machining</a> di Cikarang sejak 2011.</p>
+      <p><strong>BJE Group</strong> menaungi divisi BJE Interior, BJE Robotics, dan BJE Studio.</p>
+    </section>
+
+    <section id="galeri">
+      <h2>Galeri Hasil Kerja</h2>
+      <p>Berikut dokumentasi proyek bubut, milling, slotting, dan fabrikasi komponen industri.</p>
 
     <div class="tab">
       <button class="tablink active" onclick="filterGaleri('all')">Semua</button>
