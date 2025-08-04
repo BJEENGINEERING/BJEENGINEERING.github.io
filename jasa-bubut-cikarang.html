@@ -7,6 +7,9 @@
   <meta name="description" content="BJE Engineering melayani jasa bubut presisi di Cikarang sejak 2011. Akurat dan terpercaya.">
   <meta name="keywords" content="jasa bubut Cikarang, bubut presisi, bengkel bubut, bubut logam">
   <link rel="stylesheet" href="style.css">
+
+  <!-- ✅ Typed.js -->
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
 </head>
 <body>
 
@@ -15,27 +18,21 @@
   <img src="images/logo group.png" alt="BJE Group Logo">
 </div>
 
-	<!-- Tombol Aksi Jika Login -->
-	<div class="top-bar">
+<div class="top-bar">
   <div class="icon-buttons" id="actionButtons" style="display: none;">
     <button class="icon-button" title="Pesan">📩</button>
     <button class="icon-button" title="Notifikasi">🔔</button>
     <button class="icon-button" title="Order Saya">📝</button>
   </div>
-
-  <!-- Avatar User Jika Login -->
   <div class="avatar-container" id="userMenu" style="display: none;" onclick="toggleDropdown()">
     <img src="images/user-icon.png" alt="User Avatar" class="avatar">
   </div>
-
-  <!-- Tombol Login/Daftar Jika Belum Login -->
   <div id="authButtons" class="auth-buttons">
     <a href="login.html" class="login-btn">Login</a>
     <a href="register.html" class="register-btn">Daftar</a>
   </div>
 </div>
 
-<!-- Panel Dropdown User -->
 <div class="dropdown-panel" id="dropdownContent">
   <div class="user-info">
     <img src="images/user-icon.png" class="avatar small" alt="User Avatar">
@@ -50,9 +47,10 @@
   <a href="#" onclick="logout()"><i>🚪</i> Logout</a>
 </div>
 
+<!-- ✅ Header dengan teks animasi -->
 <header>
   <h1>Jasa Bubut Cikarang</h1>
-  <p>Presisi & Profesional sejak 2011 - BJE Engineering</p>
+  <p><span id="typed-text"></span></p>
 </header>
 
 <div class="container">
@@ -99,7 +97,6 @@
   </section>
 </div>
 
-<!-- ✅ Footer -->
 <footer>
   <p>&copy; 2025 BJE ENGINEERING | Jasa Bubut Cikarang</p>
   <p>
@@ -112,95 +109,48 @@
   </p>
 </footer>
 
-<!-- ✅ Script Dropdown -->
-  <script>
-    function toggleDropdown() {
-      const panel = document.getElementById("dropdownContent");
-      panel.style.display = panel.style.display === "block" ? "none" : "block";
-    }
-
-    window.addEventListener("click", function (e) {
-      if (!e.target.closest(".account-dropdown")) {
-        document.getElementById("dropdownContent").style.display = "none";
-      }
-    });
-
-    window.addEventListener("DOMContentLoaded", () => {
-      const loggedIn = localStorage.getItem('login') === 'true';
-      if (loggedIn) {
-        document.getElementById("userMenu").style.display = 'block';
-      } else {
-        document.getElementById("authButtons").style.display = 'flex';
-      }
-    });
-
-    function logout() {
-      localStorage.removeItem('login');
-      window.location.reload();
-    }
-  </script>
-
-<!-- Fuse.js CDN -->
-<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.6.2"></script>
-
+<!-- ✅ Dropdown & Login Script -->
 <script>
-  async function fetchIndex() {
-    const res = await fetch('search-index.json');
-    return await res.json();
+  function toggleDropdown() {
+    const panel = document.getElementById("dropdownContent");
+    panel.style.display = panel.style.display === "block" ? "none" : "block";
   }
 
-  function renderResults(results) {
-    const container = document.getElementById('search-results');
-    container.innerHTML = '';
-    if (results.length === 0) {
-      container.innerHTML = '<p>Tidak ada hasil ditemukan.</p>';
-      return;
+  window.addEventListener("click", function (e) {
+    if (!e.target.closest(".account-dropdown")) {
+      document.getElementById("dropdownContent").style.display = "none";
     }
-    results.forEach(item => {
-      const card = document.createElement('a');
-      card.className = 'result-card';
-      card.href = item.url;
-      card.innerHTML = `
-        ${item.image ? `<img src="${item.image}" alt="${item.title}">` : ''}
-        <div class="result-content">
-          <div class="result-title">${item.title}</div>
-          <div class="result-category">Kategori: ${item.category}</div>
-          <div class="result-description">${item.description}</div>
-        </div>
-      `;
-      container.appendChild(card);
-    });
-  }
+  });
 
-  async function initLiveSearch() {
-    const data = await fetchIndex();
-    const fuse = new Fuse(data, {
-      keys: ['title', 'description', 'category'],
-      includeScore: false,
-      threshold: 0.4,
-    });
-
-    const input = document.getElementById('search-input');
-    const category = document.getElementById('category-filter');
-    const form = document.getElementById('live-search-form');
-
-    function searchNow(e) {
-      if (e) e.preventDefault();
-      const keyword = input.value.trim();
-      const selected = category.value;
-      let results = keyword ? fuse.search(keyword).map(r => r.item) : data;
-      if (selected !== 'all') {
-        results = results.filter(r => r.category === selected);
-      }
-      renderResults(results);
+  window.addEventListener("DOMContentLoaded", () => {
+    const loggedIn = localStorage.getItem('login') === 'true';
+    if (loggedIn) {
+      document.getElementById("userMenu").style.display = 'block';
+    } else {
+      document.getElementById("authButtons").style.display = 'flex';
     }
+  });
 
-    input.addEventListener('input', searchNow);
-    category.addEventListener('change', searchNow);
-    form.addEventListener('submit', searchNow);
+  function logout() {
+    localStorage.removeItem('login');
+    window.location.reload();
   }
+</script>
 
-  initLiveSearch();
+<!-- ✅ Typed.js Script untuk Efek Mengetik -->
+<script>
+  var typed = new Typed('#typed-text', {
+    strings: [
+      "Presisi & Profesional sejak 2011",
+      "Bubut Manual & CNC Akurat",
+      "Layanan Teknik Industri Terpercaya",
+      "Solusi Komponen Teknik Cikarang"
+    ],
+    typeSpeed: 50,
+    backSpeed: 30,
+    backDelay: 2000,
+    loop: true
+  });
 </script>
 
 </body>
