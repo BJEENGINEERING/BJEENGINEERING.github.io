@@ -41,12 +41,14 @@ header {
 
 #typed-text {
   display: inline-block;
-  min-width: 280px;     /* Mencegah glitch karena lebar teks berubah-ubah */
-  min-height: 30px;     /* Menjaga tinggi tetap saat efek mengetik */
+  min-width: 320px;     /* Mencegah glitch karena lebar teks berubah-ubah */
+  min-height: 28px;     /* Menjaga tinggi tetap saat efek mengetik */
   font-size: 1.2rem;
   color: #fff;          /* Warna putih agar kontras di header biru */
   font-weight: 500;
   white-space: nowrap;
+  overflow: hidden;
+  text-align: center;
 }
 
 nav {
