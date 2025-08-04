@@ -55,7 +55,7 @@ header {
   color: #fff;
   font-weight: 500;
   white-space: nowrap;
-  min-width: 320px;        /* sesuaikan agar cukup semua kalimat */
+  min-width: 300px;        /* sesuaikan agar cukup semua kalimat */
   text-align: center;
 }
 
