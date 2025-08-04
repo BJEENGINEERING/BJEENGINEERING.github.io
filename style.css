@@ -20,6 +20,12 @@ h2 {
 /* =======================================
    🔝 HEADER & TYPING
 ======================================= */
+header h1 {
+  font-size: 22px;
+  margin: 8px 0 4px 0;
+  font-weight: 600;
+}
+
 header {
   background: linear-gradient(135deg, #1363DF, #06283D);
   color: #ffffff;
