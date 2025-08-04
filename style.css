@@ -1,50 +1,40 @@
-
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
-
-/* (Isi lainnya tetap sama dari style.css sebelumnya, tetapi bagian berikut diperbaiki) */
-.card {
-  overflow: hidden;
-}
-
-.card.fabrikasi img {
-  width: 100%;
-  margin-bottom: 8px;
-}
-
-.swiper-slide footer {
-  margin-top: 10px;
-  font-weight: bold;
-  color: #1b1b1b;
-  font-style: normal;
-  text-align: right;
-}
-
-/* Tambahan dan isi style.css sebelumnya tetap dilestarikan */
+/* =======================================
+   🌐 GLOBAL & FONTS
+======================================= */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
 
 body {
   font-family: 'Poppins', sans-serif;
   margin: 0;
   padding: 0;
-  background: #e6f0f3; /* baru */
+  background: #e6f0f3;
   color: #333;
 }
 
+h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #0f4c75;
+}
+
+/* =======================================
+   🔝 HEADER & TYPING
+======================================= */
 header {
-  background: linear-gradient(135deg, #1363DF, #06283D); /* Biru elektrik ke biru gelap */
+  background: linear-gradient(135deg, #1363DF, #06283D);
   color: #ffffff;
   padding: 60px 20px;
   text-align: center;
   box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
-  border-bottom: 3px solid #47B5FF; /* garis aksen tipis */
+  border-bottom: 3px solid #47B5FF;
 }
 
 .typing-wrapper {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100%;             /* memastikan sejajar horizontal */
-  min-height: 32px;        /* mencegah garis | bergeser */
+  width: 100%;
+  min-height: 32px;
   margin-top: 6px;
   overflow: hidden;
 }
@@ -55,11 +45,13 @@ header {
   color: #fff;
   font-weight: 500;
   white-space: nowrap;
-  min-width: 300px;        /* sesuaikan agar cukup semua kalimat */
+  min-width: 300px;
   text-align: center;
 }
 
-
+/* =======================================
+   🧭 NAVIGATION
+======================================= */
 nav {
   background: rgba(27, 38, 44, 0.85);
   backdrop-filter: blur(4px);
@@ -89,7 +81,6 @@ nav a {
   background: none;
   display: flex;
   align-items: center;
-  opacity: 1 !important;
   white-space: nowrap;
   flex: 0 0 auto;
 }
@@ -98,37 +89,25 @@ nav a:hover,
 nav a.active {
   background: #0f4c75 !important;
   color: #fff !important;
-  opacity: 1 !important;
 }
 
 @media (max-width: 600px) {
   nav {
-    overflow-x: auto;
-    white-space: nowrap;
-    flex-wrap: nowrap;
-    height: 48px;
     padding: 0 10px;
   }
-
   nav a {
-    flex: 0 0 auto;
     font-size: 14px;
     padding: 0 16px;
-    height: 48px;
-    line-height: 48px;
   }
 }
 
+/* =======================================
+   🖼️ GALLERY & CARD
+======================================= */
 .container {
   padding: 40px 20px;
   max-width: 1200px;
   margin: auto;
-}
-
-h2 {
-  text-align: center;
-  margin-bottom: 30px;
-  color: #0f4c75;
 }
 
 .gallery {
@@ -144,6 +123,7 @@ h2 {
   padding: 20px;
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
 }
 
 .card:hover {
@@ -156,8 +136,21 @@ h2 {
   height: auto;
   border-radius: 8px;
   margin-bottom: 10px;
+  transition: transform 0.4s ease;
 }
 
+.card:hover img {
+  transform: scale(1.05);
+}
+
+.card.fabrikasi img {
+  width: 100%;
+  margin-bottom: 8px;
+}
+
+/* =======================================
+   🧩 TAB
+======================================= */
 .tab {
   text-align: center;
   margin-bottom: 20px;
@@ -178,6 +171,9 @@ h2 {
   color: white;
 }
 
+/* =======================================
+   🧾 TESTIMONIALS
+======================================= */
 .testimonials blockquote {
   background: #f1f5f9;
   padding: 15px;
@@ -187,6 +183,9 @@ h2 {
   font-style: italic;
 }
 
+/* =======================================
+   💬 WHATSAPP FLOATING
+======================================= */
 .floating-wa {
   position: fixed;
   bottom: 24px;
@@ -205,28 +204,115 @@ h2 {
   gap: 8px;
 }
 
-footer {
-  background: rgba(27, 38, 44, 0.85);
-  color: #f0f0f0;
-  text-align: center;
-  padding: 24px 16px;
-  margin-top: 40px;
-  font-size: 0.95em;
-  line-height: 1.6;
-  backdrop-filter: blur(4px);
-  padding-bottom: 100px;
+#draggable-wa {
+  position: fixed;
+  bottom: 90px;
+  left: 20px;
+  background-color: #25D366;
+  color: white;
+  font-size: 24px;
+  border-radius: 50%;
+  width: 56px;
+  height: 56px;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  cursor: grab;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  z-index: 9999;
+  text-decoration: none;
+  user-select: none;
+  opacity: 0;
+  transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
-footer a {
-  color: #ffffff;
-  font-weight: 500;
-  text-decoration: underline;
+#draggable-wa img {
+  width: 28px;
+  height: 28px;
 }
 
-footer a:hover {
-  color: #00e0b8;
+#draggable-wa.show {
+  display: flex;
+  opacity: 1;
+  animation: fadeIn 0.6s ease-in-out;
 }
 
+#draggable-wa:active {
+  cursor: grabbing;
+}
+
+/* =======================================
+   🔁 ANIMASI UMUM
+======================================= */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* =======================================
+   📦 PRELOADER
+======================================= */
+#preloader {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  z-index: 99999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loader {
+  border: 6px solid #f3f3f3;
+  border-top: 6px solid #3282b8;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  animation: spin 1s linear infinite;
+}
+
+/* =======================================
+   🌀 SWIPER SLIDE
+======================================= */
+.swiper {
+  width: 100%;
+  padding: 30px 0;
+}
+
+.swiper-slide {
+  background: #f8f9fa;
+  border-left: 4px solid #3282b8;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  max-width: 700px;
+  margin: auto;
+  font-style: italic;
+  color: #333;
+}
+
+.swiper-slide footer {
+  margin-top: 10px;
+  font-weight: bold;
+  color: #1b1b1b;
+  font-style: normal;
+  text-align: right;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: #3282b8;
+}
+
+/* =======================================
+   📌 MISC
+======================================= */
 .breadcrumb {
   font-size: 14px;
   margin-bottom: 20px;
@@ -266,65 +352,12 @@ footer a:hover {
   background-color: #0f4c75;
 }
 
-#draggable-wa {
-  position: fixed;
-  bottom: 90px;
-  left: 20px;
-  background-color: #25D366;
-  color: white;
-  font-size: 24px;
-  border-radius: 50%;
-  width: 56px;
-  height: 56px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: grab;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-  z-index: 9999;
-  text-decoration: none;
-  user-select: none;
-}
-
-#draggable-wa:active {
-  cursor: grabbing;
-}
-
-#draggable-wa img {
-  width: 28px;
-  height: 28px;
-}
-
-#draggable-wa {
-  display: none; /* tombol disembunyikan saat awal */
-  opacity: 0;
-  transition: opacity 0.3s ease, transform 0.3s ease;
-}
-
-#draggable-wa.show {
-  display: flex;
-  opacity: 1;
-  animation: fadeIn 0.6s ease-in-out;
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
 .highlight-box {
   background: #e8f4fa;
   padding: 20px;
   border-left: 6px solid #0f4c75;
   border-radius: 8px;
-  margin-top: 20px;
-  margin-bottom: 20px;
+  margin: 20px 0;
   box-shadow: 0 2px 10px rgba(0,0,0,0.05);
 }
 .highlight-box p {
@@ -333,95 +366,33 @@ footer a:hover {
   color: #333;
 }
 
-.card img {
-  transition: transform 0.4s ease;
-}
-.card:hover img {
-  transform: scale(1.05);
-}
-
-#preloader {
-  position: fixed;
-  top: 0; left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: white;
-  z-index: 99999;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+/* =======================================
+   👣 FOOTER
+======================================= */
+footer {
+  background: rgba(27, 38, 44, 0.85);
+  color: #f0f0f0;
+  text-align: center;
+  padding: 24px 16px 100px;
+  margin-top: 40px;
+  font-size: 0.95em;
+  line-height: 1.6;
+  backdrop-filter: blur(4px);
 }
 
-.loader {
-  border: 6px solid #f3f3f3;
-  border-top: 6px solid #3282b8;
-  border-radius: 50%;
-  width: 48px;
-  height: 48px;
-  animation: spin 1s linear infinite;
+footer a {
+  color: #ffffff;
+  font-weight: 500;
+  text-decoration: underline;
 }
 
-@keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+footer a:hover {
+  color: #00e0b8;
 }
 
-#preloader {
-  position: fixed;
-  top: 0; left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: white;
-  z-index: 99999;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.loader {
-  border: 6px solid #f3f3f3;
-  border-top: 6px solid #3282b8;
-  border-radius: 50%;
-  width: 48px;
-  height: 48px;
-  animation: spin 1s linear infinite;
-}
-
-@keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
-
-.swiper {
-  width: 100%;
-  padding: 30px 0;
-}
-
-.swiper-slide {
-  background: #f8f9fa;
-  border-left: 4px solid #3282b8;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-  max-width: 700px;
-  margin: auto;
-  font-style: italic;
-  color: #333;
-}
-
-..swiper-slide footer {
-  margin-top: 10px;
-  font-weight: bold;
-  color: #1b1b1b; /* lebih gelap dan terbaca jelas */
-  font-style: normal;
-  text-align: right;
-}
-
-.swiper-pagination-bullet-active {
-  background-color: #3282b8;
-}
-
-/* 🔵 Top Bar Kanan Atas */
+/* =======================================
+   🧑 USER PANEL & LOGIN
+======================================= */
 .top-bar {
   position: absolute;
   top: 16px;
@@ -432,7 +403,6 @@ footer a:hover {
   z-index: 9999;
 }
 
-/* Tombol Ikon */
 .icon-button {
   background: none;
   border: none;
@@ -444,7 +414,6 @@ footer a:hover {
   color: #47b5ff;
 }
 
-/* Avatar */
 .avatar-container {
   cursor: pointer;
 }
@@ -460,7 +429,6 @@ footer a:hover {
   margin-right: 10px;
 }
 
-/* Tombol Login / Daftar */
 .auth-buttons {
   display: flex;
   gap: 10px;
@@ -484,7 +452,6 @@ footer a:hover {
   opacity: 0.9;
 }
 
-/* Dropdown */
 .dropdown-panel {
   display: none;
   position: absolute;
@@ -523,64 +490,55 @@ footer a:hover {
   margin-left: 10px;
 }
 
-/* 🔽 Animasi */
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(-10px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-/* ✅ RESPONSIF KHUSUS HP */
+/* =======================================
+   📱 RESPONSIVE - MOBILE
+======================================= */
 @media (max-width: 460px) {
   .top-bar {
     top: 8px;
     right: 10px;
     gap: 6px;
   }
-
   .login-btn, .register-btn {
     padding: 5px 10px;
     font-size: 12.5px;
   }
-
   .icon-button {
     font-size: 13px;
   }
 }
 
+/* =======================================
+   🔰 LOGO RESPONSIVE
+======================================= */
 .logo-top-left {
-    position: absolute;
-    top: 4px;
-    left: 18px;
-    z-index: 1000;
-  }
-
-  .logo-top-left img {
-    height: 42px;
-    width: auto;
-  }
-
-  /* 🔧 Responsive logo untuk layar kecil (HP) */
+  position: absolute;
+  top: 4px;
+  left: 18px;
+  z-index: 1000;
+}
+.logo-top-left img {
+  height: 42px;
+  width: auto;
+}
 @media (max-width: 512px) {
   .logo-top-left {
     top: 6px;
     left: 6px;
   }
   .logo-top-left img {
-    height: 26px; /* Sesuaikan biar nggak kebesaran */
+    height: 26px;
   }
 }
-
 @media (min-width: 1024px) {
   .logo-top-left img {
     height: 40px;
   }
 }
-
-/* ✅ Logo Kiri Atas */
 .logo-top {
   height: 18px;
   margin-right: auto;
   object-fit: contain;
-  filter: brightness(0) invert(1); /* Biar putih jika logo PNG */
+  filter: brightness(0) invert(1);
 }
 
