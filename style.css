@@ -44,7 +44,7 @@ header {
   justify-content: center;
   align-items: center;
   width: 100%;             /* memastikan sejajar horizontal */
-  min-height: 32px;        /* mencegah garis | bergeser */
+  min-height: 40px;        /* mencegah garis | bergeser */
   margin-top: 6px;
   overflow: hidden;
 }
@@ -55,7 +55,7 @@ header {
   color: #fff;
   font-weight: 500;
   white-space: nowrap;
-  min-width: 340px;        /* sesuaikan agar cukup semua kalimat */
+  min-width: 400px;        /* sesuaikan agar cukup semua kalimat */
   text-align: center;
 }
 
