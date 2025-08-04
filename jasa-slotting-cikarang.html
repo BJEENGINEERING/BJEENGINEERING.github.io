@@ -4,9 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Jasa Slotting Cikarang - BJE Engineering</title>
-  <meta name="description" content="Layanan slotting keyway dan spline untuk kebutuhan mesin industri Anda.">
-  <meta name="keywords" content="jasa slotting Cikarang, slotting keyway, slotting spline, slotting logam">
+  <meta name="description" content="Layanan slotting Cikarang untuk keyway dalam dan lubang segi. Akurat, cepat, dan presisi.">
+  <meta name="keywords" content="jasa slotting Cikarang, slotting keyway, slotting presisi, keyway dalam">
   <link rel="stylesheet" href="style.css">
+
+  <!-- ✅ Typed.js -->
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
 </head>
 <body>
 
@@ -15,27 +18,21 @@
   <img src="images/logo group.png" alt="BJE Group Logo">
 </div>
 
-	<!-- Tombol Aksi Jika Login -->
-	<div class="top-bar">
+<div class="top-bar">
   <div class="icon-buttons" id="actionButtons" style="display: none;">
     <button class="icon-button" title="Pesan">📩</button>
     <button class="icon-button" title="Notifikasi">🔔</button>
     <button class="icon-button" title="Order Saya">📝</button>
   </div>
-
-  <!-- Avatar User Jika Login -->
   <div class="avatar-container" id="userMenu" style="display: none;" onclick="toggleDropdown()">
     <img src="images/user-icon.png" alt="User Avatar" class="avatar">
   </div>
-
-  <!-- Tombol Login/Daftar Jika Belum Login -->
   <div id="authButtons" class="auth-buttons">
     <a href="login.html" class="login-btn">Login</a>
     <a href="register.html" class="register-btn">Daftar</a>
   </div>
 </div>
 
-<!-- Panel Dropdown User -->
 <div class="dropdown-panel" id="dropdownContent">
   <div class="user-info">
     <img src="images/user-icon.png" class="avatar small" alt="User Avatar">
@@ -50,9 +47,10 @@
   <a href="#" onclick="logout()"><i>🚪</i> Logout</a>
 </div>
 
+<!-- ✅ Header dengan animasi -->
 <header>
   <h1>Jasa Slotting Cikarang</h1>
-  <p>Presisi Slotting Keyway untuk Shaft, Gear, dan Bushing</p>
+  <p><span id="typed-text"></span></p>
 </header>
 
 <div class="container">
@@ -61,30 +59,30 @@
   </nav>
 
   <section>
-    <p>Kami melayani <strong>slotting keyway & spline</strong> berbagai ukuran, termasuk pembuatan ulang dan perbaikan komponen industri.</p>
+    <p>Kami melayani pengerjaan <strong>slotting keyway</strong> untuk pulley, gear, hub, dan shaft dalam berbagai ukuran.</p>
     <div class="features">
-      <div class="feature-box">✅ Slotting Lurus & Spline</div>
-      <div class="feature-box">✅ Presisi hingga ±0.05 mm</div>
-      <div class="feature-box">✅ Untuk Shaft, Coupling, Gear Hub</div>
+      <div class="feature-box">✅ Slotting Keyway Dalam</div>
+      <div class="feature-box">✅ Presisi Hingga Lubang Tertutup</div>
+      <div class="feature-box">✅ Cocok untuk Gearbox & Hub Custom</div>
     </div>
-    <a href="index.html#hubungi-kami" class="button">💬 Minta Penawaran</a>
+    <a href="index.html#hubungi-kami" class="button">💬 Minta Penawaran Sekarang</a>
   </section>
 
   <section>
-    <h2>Contoh Hasil Slotting</h2>
+    <h2>Galeri Slotting</h2>
     <div class="gallery">
-      <div class="card"><img src="images/IMG_20180709_091119.jpg" alt="Slotting Keyway"><p>Slotting Keyway Shaft</p></div>
+      <div class="card"><img src="images/IMG_20180709_091119.jpg" alt="Slotting Keyway"><p>Slotting Keyway</p></div>
+      <div class="card"><img src="images/IMG_20200110_203153.jpg" alt="Slotting & Tapping"><p>Slotting & Tapping</p></div>
     </div>
   </section>
 
   <section>
-    <h2>Kontak Pemesanan</h2>
-    <p>📞 <a href="https://wa.me/628982425835" target="_blank">0898-2425-835</a> atau isi formulir online.</p>
-    <a href="https://bjeengineering.infinityfreeapp.com/#form" class="button">📥 Isi Formulir</a>
+    <h2>Kontak Kami</h2>
+    <p>📞 Hubungi <a href="https://wa.me/628982425835">0898-2425-835</a> untuk konsultasi & order.</p>
+    <a href="https://bjeengineering.infinityfreeapp.com/#form" class="button">📥 Formulir Penawaran</a>
   </section>
 </div>
 
-<!-- ✅ Footer -->
 <footer>
   <p>&copy; 2025 BJE ENGINEERING | Jasa Slotting Cikarang</p>
   <p>
@@ -97,95 +95,48 @@
   </p>
 </footer>
 
-<!-- ✅ Script Dropdown -->
-  <script>
-    function toggleDropdown() {
-      const panel = document.getElementById("dropdownContent");
-      panel.style.display = panel.style.display === "block" ? "none" : "block";
-    }
-
-    window.addEventListener("click", function (e) {
-      if (!e.target.closest(".account-dropdown")) {
-        document.getElementById("dropdownContent").style.display = "none";
-      }
-    });
-
-    window.addEventListener("DOMContentLoaded", () => {
-      const loggedIn = localStorage.getItem('login') === 'true';
-      if (loggedIn) {
-        document.getElementById("userMenu").style.display = 'block';
-      } else {
-        document.getElementById("authButtons").style.display = 'flex';
-      }
-    });
-
-    function logout() {
-      localStorage.removeItem('login');
-      window.location.reload();
-    }
-  </script>
-
-<!-- Fuse.js CDN -->
-<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.6.2"></script>
-
+<!-- ✅ Script Dropdown Login -->
 <script>
-  async function fetchIndex() {
-    const res = await fetch('search-index.json');
-    return await res.json();
+  function toggleDropdown() {
+    const panel = document.getElementById("dropdownContent");
+    panel.style.display = panel.style.display === "block" ? "none" : "block";
   }
 
-  function renderResults(results) {
-    const container = document.getElementById('search-results');
-    container.innerHTML = '';
-    if (results.length === 0) {
-      container.innerHTML = '<p>Tidak ada hasil ditemukan.</p>';
-      return;
+  window.addEventListener("click", function (e) {
+    if (!e.target.closest(".account-dropdown")) {
+      document.getElementById("dropdownContent").style.display = "none";
     }
-    results.forEach(item => {
-      const card = document.createElement('a');
-      card.className = 'result-card';
-      card.href = item.url;
-      card.innerHTML = `
-        ${item.image ? `<img src="${item.image}" alt="${item.title}">` : ''}
-        <div class="result-content">
-          <div class="result-title">${item.title}</div>
-          <div class="result-category">Kategori: ${item.category}</div>
-          <div class="result-description">${item.description}</div>
-        </div>
-      `;
-      container.appendChild(card);
-    });
-  }
+  });
 
-  async function initLiveSearch() {
-    const data = await fetchIndex();
-    const fuse = new Fuse(data, {
-      keys: ['title', 'description', 'category'],
-      includeScore: false,
-      threshold: 0.4,
-    });
-
-    const input = document.getElementById('search-input');
-    const category = document.getElementById('category-filter');
-    const form = document.getElementById('live-search-form');
-
-    function searchNow(e) {
-      if (e) e.preventDefault();
-      const keyword = input.value.trim();
-      const selected = category.value;
-      let results = keyword ? fuse.search(keyword).map(r => r.item) : data;
-      if (selected !== 'all') {
-        results = results.filter(r => r.category === selected);
-      }
-      renderResults(results);
+  window.addEventListener("DOMContentLoaded", () => {
+    const loggedIn = localStorage.getItem('login') === 'true';
+    if (loggedIn) {
+      document.getElementById("userMenu").style.display = 'block';
+    } else {
+      document.getElementById("authButtons").style.display = 'flex';
     }
+  });
 
-    input.addEventListener('input', searchNow);
-    category.addEventListener('change', searchNow);
-    form.addEventListener('submit', searchNow);
+  function logout() {
+    localStorage.removeItem('login');
+    window.location.reload();
   }
+</script>
 
-  initLiveSearch();
+<!-- ✅ Script Typed.js Efek Mengetik -->
+<script>
+  var typed = new Typed('#typed-text', {
+    strings: [
+      "Jasa Slotting Keyway Presisi",
+      "Pengerjaan Lubang Keyway Dalam",
+      "Solusi Teknik Gear & Hub",
+      "Slotting Akurat & Profesional"
+    ],
+    typeSpeed: 50,
+    backSpeed: 30,
+    backDelay: 2000,
+    loop: true
+  });
 </script>
 
 </body>
