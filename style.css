@@ -39,17 +39,26 @@ header {
   border-bottom: 3px solid #47B5FF; /* garis aksen tipis */
 }
 
+.typing-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;             /* memastikan sejajar horizontal */
+  min-height: 32px;        /* mencegah garis | bergeser */
+  margin-top: 6px;
+  overflow: hidden;
+}
+
 #typed-text {
   display: inline-block;
-  min-width: 320px;     /* Mencegah glitch karena lebar teks berubah-ubah */
-  min-height: 28px;     /* Menjaga tinggi tetap saat efek mengetik */
   font-size: 1.2rem;
-  color: #fff;          /* Warna putih agar kontras di header biru */
+  color: #fff;
   font-weight: 500;
   white-space: nowrap;
-  overflow: hidden;
+  min-width: 340px;        /* sesuaikan agar cukup semua kalimat */
   text-align: center;
 }
+
 
 nav {
   background: rgba(27, 38, 44, 0.85);
@@ -206,21 +215,6 @@ footer {
   line-height: 1.6;
   backdrop-filter: blur(4px);
   padding-bottom: 100px;
-}
-
-.typing-wrapper {
-  display: inline-block;
-  min-width: 320px;  /* menjaga lebar agar teks tidak berubah-ubah saat mengetik */
-  min-height: 32px;  /* menjaga tinggi baris tetap */
-  text-align: center;
-  margin: 0 auto;
-}
-
-#typed-text {
-  font-size: 1.2rem;
-  color: #fff;
-  font-weight: 500;
-  white-space: nowrap;
 }
 
 footer a {
