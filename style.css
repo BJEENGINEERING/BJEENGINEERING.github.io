@@ -181,10 +181,11 @@ nav a.active {
    🧾 TESTIMONIALS
 ======================================= */
 .testimonials blockquote {
-  background: #f1f5f9;
+  background: #1f3b57;     /* ubah jadi warna gelap */
+  color: white;            /* teks jadi putih */
   padding: 15px;
   margin: 10px 0;
-  border-left: 5px solid #3282b8;
+  border-left: 5px solid #47B5FF;
   border-radius: 6px;
   font-style: italic;
 }
