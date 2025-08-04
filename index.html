@@ -148,11 +148,11 @@ s0.parentNode.insertBefore(s1,s0);
 
 
     <div class="tab">
-      <button class="tablink active" onclick="filterGaleri('all')">Semua</button>
-      <button class="tablink" onclick="filterGaleri('bubut')">Bubut</button>
-      <button class="tablink" onclick="filterGaleri('milling')">Milling</button>
-      <button class="tablink" onclick="filterGaleri('slotting')">Slotting</button>
-      <button class="tablink" onclick="filterGaleri('fabrikasi')">Fabrikasi</button>
+      <button class="tablink active" onclick="filterGaleri('all', event)">Semua</button>
+      <button class="tablink" onclick="filterGaleri('bubut', event)">Bubut</button>
+      <button class="tablink" onclick="filterGaleri('milling', event)">Milling</button>
+      <button class="tablink" onclick="filterGaleri('slotting', event)">Slotting</button>
+      <button class="tablink" onclick="filterGaleri('fabrikasi', event)">Fabrikasi</button>
     </div>
     <div class="gallery">
        <div class="card bubut">
@@ -372,11 +372,11 @@ s0.parentNode.insertBefore(s1,s0);
 
 <!-- ✅ JavaScript -->
 <script>
-function filterGaleri(kategori) {
+function filterGaleri(kategori, event) {
   const cards = document.querySelectorAll('.gallery .card');
   const tabs = document.querySelectorAll('.tablink');
   tabs.forEach(t => t.classList.remove('active'));
-  event.target.classList.add('active');
+  if(event) event.target.classList.add('active');
   cards.forEach(card => {
     card.style.display = kategori === 'all' || card.classList.contains(kategori) ? 'block' : 'none';
   });

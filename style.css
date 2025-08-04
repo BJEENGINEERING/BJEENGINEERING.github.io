@@ -1,3 +1,25 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+/* (Isi lainnya tetap sama dari style.css sebelumnya, tetapi bagian berikut diperbaiki) */
+.card {
+  overflow: hidden;
+}
+
+.card.fabrikasi img {
+  width: 100%;
+  margin-bottom: 8px;
+}
+
+.swiper-slide footer {
+  margin-top: 10px;
+  font-weight: bold;
+  color: #1b1b1b;
+  font-style: normal;
+  text-align: right;
+}
+
+/* Tambahan dan isi style.css sebelumnya tetap dilestarikan */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
 
 body {
