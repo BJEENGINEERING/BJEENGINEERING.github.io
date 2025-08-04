@@ -206,6 +206,21 @@ footer {
   padding-bottom: 100px;
 }
 
+.typing-wrapper {
+  display: inline-block;
+  min-width: 320px;  /* menjaga lebar agar teks tidak berubah-ubah saat mengetik */
+  min-height: 32px;  /* menjaga tinggi baris tetap */
+  text-align: center;
+  margin: 0 auto;
+}
+
+#typed-text {
+  font-size: 1.2rem;
+  color: #fff;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
 footer a {
   color: #ffffff;
   font-weight: 500;
