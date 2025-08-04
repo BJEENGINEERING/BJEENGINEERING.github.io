@@ -103,7 +103,9 @@ s0.parentNode.insertBefore(s1,s0);
 <section class="hero-section">
   <header data-aos="fade-down" class="banner-content">
     <h1>BJE ENGINEERING</h1>
-  <p><span id="typed-text"></span></p>
+  <div class="typing-wrapper">
+    <span id="typed-text"></span>
+  </div>
   </header>
 </section>
 
@@ -525,19 +527,20 @@ function kirimWhatsApp() {
 
 <!-- Typed.js Script -->
 <script>
-  var typed = new Typed('#typed-text', {
+  new Typed('#typed-text', {
     strings: [
-      "Spesialis Bubut Presisi",
-      "Jasa Milling & Slotting",
-      "Fabrikasi Komponen Industri",
-      "Layanan Teknik Profesional"
+      "Layanan Teknik Profesional",
+      "Custom Bubut, Milling, Slotting",
+      "Solusi Presisi untuk Industri",
+      "BJE ENGINEERING Sejak 2011"
     ],
     typeSpeed: 50,
     backSpeed: 30,
-    backDelay: 2000,
-    loop: true
+    loop: true,
+    backDelay: 2000
   });
 </script>
+
 
 	<script>
   window.addEventListener("scroll", function () {
